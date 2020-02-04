@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -22,5 +24,10 @@ public class CustomerDTO {
     private String branchState;
     private String branchCountry;
     private String ifsCode;
+
+    private List<AddressDTO> addressList;
+    private List<EmailDTO> emailList;
+    private List<PhoneDTO> phoneList;
+
 
 }

@@ -10,8 +10,9 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="address")
+@Table(name="email")
 public class Email {
+
     @Id
     @Column(name = "em_id")
     private Long emId;
@@ -21,6 +22,6 @@ public class Email {
     private String emailAddress;
 
     @ManyToOne
-    @JoinColumn
+    @JoinColumn(name = "id")
     private Customer customer;
 }

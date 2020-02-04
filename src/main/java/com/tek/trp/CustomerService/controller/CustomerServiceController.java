@@ -22,7 +22,7 @@ public class CustomerServiceController {
     private CustomerServiceI customerServiceI;
 
     @Lookup
-    private ResponseDTO getResponseDTO() {
+    public ResponseDTO getResponseDTO() {
         return null;
     }
 

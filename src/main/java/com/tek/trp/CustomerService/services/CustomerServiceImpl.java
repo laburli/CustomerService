@@ -2,7 +2,10 @@ package com.tek.trp.CustomerService.services;
 
 import com.tek.trp.CustomerService.dto.CustomerDTO;
 import com.tek.trp.CustomerService.dto.SearchCustomerDTO;
+import com.tek.trp.CustomerService.entity.Address;
 import com.tek.trp.CustomerService.entity.Customer;
+import com.tek.trp.CustomerService.entity.Email;
+import com.tek.trp.CustomerService.entity.Phone;
 import com.tek.trp.CustomerService.exception.CustomerNotFoundException;
 import com.tek.trp.CustomerService.repository.CustomerRepository;
 import com.tek.trp.CustomerService.util.ModelMapperImpl;

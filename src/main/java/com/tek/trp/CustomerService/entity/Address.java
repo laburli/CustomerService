@@ -17,6 +17,8 @@ public class Address {
     @Id
     @Column(name = "address_id")
     private Long addressId;
+    @Column(name = "door_number")
+    private String doorNumber;
     @Column(name = "address_type")
     private String addressType;
     @Column(name = "landmark")
@@ -31,7 +33,7 @@ public class Address {
     private int pinCode;
 
     @ManyToOne
-    @JoinColumn
+    @JoinColumn(name = "id")
     private Customer customer;
 
 

@@ -11,6 +11,7 @@ public class AddressDTO {
 
 
     private int addressId;
+    private String doorNumber;
     private String addressType;
     private String landmark;
     private String city;

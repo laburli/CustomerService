@@ -12,6 +12,7 @@ import javax.persistence.*;
 @Entity
 @Table(name="phone")
 public class Phone {
+
     @Id
     @Column(name = "phone_id")
     private Long phoneId;
@@ -25,7 +26,7 @@ public class Phone {
     private int phoneNumber;
 
     @ManyToOne
-    @JoinColumn
+    @JoinColumn(name = "id")
     private Customer customer;
 
 }
