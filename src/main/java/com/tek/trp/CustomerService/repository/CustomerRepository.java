@@ -18,7 +18,7 @@ public interface CustomerRepository extends JpaRepository<Customer,Long> {
 
     Optional<List<Customer>> findByFirstName(String firstName);
 
-    @Query("SELECT coalesce(max(eh.id), 0) FROM  Employee eh")
+    @Query("SELECT coalesce(max(customer.id), 0) FROM  Customer customer")
     Long getMaxId();
 
 }
