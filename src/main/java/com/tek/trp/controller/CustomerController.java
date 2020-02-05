@@ -3,15 +3,14 @@
  */
 package com.tek.trp.controller;
 
+import com.tek.trp.exception.CustomerNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.tek.trp.model.Customer;
 import com.tek.trp.service.CustomerService;
+
+import java.util.List;
 
 /**
  * @author raadari
@@ -32,6 +31,12 @@ public class CustomerController {
 	@PutMapping(value = "/update-customer-details")
 	public Customer updateCustomer(@RequestBody Customer c) {
 		return customerService.updateCustomer(c);
+	}
+
+
+	@GetMapping(value = "/searchCustomer")
+	public List<Customer> searchCustomer(@RequestBody Customer searchCustomer) throws CustomerNotFoundException {
+		return customerService.searchCustomer(searchCustomer);
 	}
 	
 }
