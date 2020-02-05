@@ -35,7 +35,7 @@ public class Customer {
 	@Column(name = "CustomerName")
 	private String customerName;
 	@Column(name = "CustomerId")
-	private String customerId;
+	private int customerId;
 	@Column(name = "Lastname")
 	private String lastname;
 	@Column(name = "MiddleName")
@@ -77,4 +77,5 @@ public class Customer {
 	@EqualsAndHashCode.Exclude
     @ToString.Exclude	
 	private Set<Address> address;
+
 }

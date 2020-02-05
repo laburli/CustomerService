@@ -3,6 +3,7 @@
 */
 package com.tek.trp.service.serviceimpl;
 
+import java.util.List;
 import java.util.Set;
 
 import org.slf4j.Logger;
@@ -57,6 +58,18 @@ public class CustomerServiceImpl implements CustomerService {
 		c.setPhoneNumber(pn);
 		return customerRepository.save(c);
 
+	}
+
+
+	public Customer addCustomer(Customer customer){
+		customer.setCustomerId((int)(Math.random() * 90000000 + 1));
+
+		return customerRepository.save(customer);
+	}
+
+	@Override
+	public List<Customer> getCustomers(){
+		return customerRepository.findAll();
 	}
 
 }

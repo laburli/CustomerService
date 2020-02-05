@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 
 import com.tek.trp.model.Customer;
 
+import java.util.List;
+
 /**
  * @author raadari
  *
@@ -20,7 +22,9 @@ public interface CustomerService {
 
 	Customer updateCustomer(Customer c);
 
+	Customer addCustomer(Customer customer);
 
+	List<Customer> getCustomers();
 	
 
 }
