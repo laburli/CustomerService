@@ -10,4 +10,5 @@ public interface CustomerServiceI {
 
     public List<CustomerDTO> searchCustomer(SearchCustomerDTO searchCustomerDTO) throws CustomerNotFoundException;
 
+
 }

@@ -38,6 +38,9 @@ public class Customer {
     private String branchCountry;
     @Column(name = "ifsc_code")
     private String ifsCode;
+    @Column(name = "status")
+    private String status;
+
 
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
     private List<Address> addressList;

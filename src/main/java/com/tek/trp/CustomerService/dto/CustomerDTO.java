@@ -24,6 +24,7 @@ public class CustomerDTO {
     private String branchState;
     private String branchCountry;
     private String ifsCode;
+    private String status;
 
     private List<AddressDTO> addressList;
     private List<EmailDTO> emailList;
