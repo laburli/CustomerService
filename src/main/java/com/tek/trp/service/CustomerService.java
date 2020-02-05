@@ -22,8 +22,6 @@ public interface CustomerService {
 
 	Customer updateCustomer(Customer c);
 
-	Customer addCustomer(Customer customer);
-
 	List<Customer> getCustomers();
 	
 

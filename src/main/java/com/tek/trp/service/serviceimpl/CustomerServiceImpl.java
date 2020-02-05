@@ -40,6 +40,7 @@ public class CustomerServiceImpl implements CustomerService {
 		c.setAddress(a);
 		c.setEmail(e);
 		c.setPhoneNumber(pn);
+		c.setCustomerId((int)(Math.random() * 90000000 + 1));
 		logger.debug("Customer {}",c);
 		return customerRepository.save(c);
 	}
@@ -60,12 +61,6 @@ public class CustomerServiceImpl implements CustomerService {
 
 	}
 
-
-	public Customer addCustomer(Customer customer){
-		customer.setCustomerId((int)(Math.random() * 90000000 + 1));
-
-		return customerRepository.save(customer);
-	}
 
 	@Override
 	public List<Customer> getCustomers(){

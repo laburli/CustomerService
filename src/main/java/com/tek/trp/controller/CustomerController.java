@@ -40,6 +40,8 @@ public class CustomerController {
 
 	@PostMapping("/create-customer")
 	public Customer createCustomer(@Valid @RequestBody Customer customer){
-		return customerService.addCustomer(customer);
+		return customerService.saveCustomer(customer);
 	}
+
+
 }
