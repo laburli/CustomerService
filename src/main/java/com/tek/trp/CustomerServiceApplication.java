@@ -1,10 +1,9 @@
-package com.tek.trp.CustomerService;
+package com.tek.trp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication(scanBasePackages = { "com.tek.trp.controller", "com.tek.trp.service","com.tek.trp.model",
-		"com.tek.trp.repository","com.tek.trp.service.*" })
+@SpringBootApplication
 public class CustomerServiceApplication {
 
 	public static void main(String[] args) {
