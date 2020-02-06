@@ -35,7 +35,7 @@ public class Customer {
 	@Column(name = "CustomerName")
 	private String customerName;
 	@Column(name = "CustomerId")
-	private int customerId;
+	private String customerId;
 	@Column(name = "Lastname")
 	private String lastname;
 	@Column(name = "MiddleName")

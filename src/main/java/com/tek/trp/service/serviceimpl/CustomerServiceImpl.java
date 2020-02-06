@@ -3,9 +3,12 @@
 */
 package com.tek.trp.service.serviceimpl;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
+import com.tek.trp.exception.CustomerNotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,7 +43,7 @@ public class CustomerServiceImpl implements CustomerService {
 		c.setAddress(a);
 		c.setEmail(e);
 		c.setPhoneNumber(pn);
-		c.setCustomerId((int)(Math.random() * 90000000 + 1));
+		c.setCustomerId(String.valueOf(Math.random() * 90000000 + 1));
 		logger.debug("Customer {}",c);
 		return customerRepository.save(c);
 	}
@@ -61,10 +64,45 @@ public class CustomerServiceImpl implements CustomerService {
 
 	}
 
-
 	@Override
 	public List<Customer> getCustomers(){
 		return customerRepository.findAll();
 	}
 
+	public List<Customer> searchCustomer(Customer customer) throws CustomerNotFoundException {
+		List<Customer> listCustomer = new ArrayList();
+		try {
+			if (customer.getCustomerId() != null && !customer.getCustomerId().equalsIgnoreCase("")) {
+				if (customer.getCustomerName() != null && !customer.getCustomerName().equalsIgnoreCase("")) {
+					Optional<Customer> byCustomerIdAndFirstName = customerRepository.findByCustomerIdAndCustomerName(customer.getCustomerId(), customer.getCustomerName());
+					if (byCustomerIdAndFirstName.isPresent()) {
+						Customer getCustomer = byCustomerIdAndFirstName.get();
+						listCustomer.add(getCustomer);
+					} else {
+						throw new CustomerNotFoundException("There is no customer with this id :" + customer.getCustomerId() + " and name:" + customer.getCustomerName());
+					}
+				} else {
+					// findById;
+					Optional<Customer> byCustomerId = customerRepository.findByCustomerId(customer.getCustomerId());
+					if (byCustomerId.isPresent()) {
+						Customer customerId = byCustomerId.get();
+						listCustomer.add(customerId);
+					} else {
+						throw new CustomerNotFoundException("There is no customer with this id :" + customer.getCustomerId());
+					}
+				}
+			} else {
+				// findByName;
+				Optional<List<Customer>> byFirstName = customerRepository.findByCustomerName(customer.getCustomerName());
+				if (byFirstName.isPresent()) {
+					listCustomer = byFirstName.get();
+				} else {
+					throw new CustomerNotFoundException("There is no customer with this name:" + customer.getCustomerName());
+				}
+			}
+		} catch (Exception e) {
+			throw new CustomerNotFoundException("There is a problem to find a customer,Please try after sometime");
+		}
+		return listCustomer;
+	}
 }

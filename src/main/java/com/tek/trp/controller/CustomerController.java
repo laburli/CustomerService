@@ -3,6 +3,7 @@
  */
 package com.tek.trp.controller;
 
+import com.tek.trp.exception.CustomerNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -31,6 +32,11 @@ public class CustomerController {
 	@PutMapping(value = "/update-customer-details")
 	public Customer updateCustomer(@RequestBody Customer c) {
 		return customerService.updateCustomer(c);
+	}
+
+	@GetMapping(value = "/searchCustomer")
+	public List<Customer> searchCustomer(@RequestBody Customer searchCustomer) throws CustomerNotFoundException {
+		return customerService.searchCustomer(searchCustomer);
 	}
 
 	@GetMapping("/viewAll-Customers")
