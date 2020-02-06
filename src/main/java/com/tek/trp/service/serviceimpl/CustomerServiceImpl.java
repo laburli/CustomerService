@@ -7,14 +7,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
-import java.util.stream.Collectors;
-
 import com.tek.trp.exception.CustomerNotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.tek.trp.model.Address;
 import com.tek.trp.model.Customer;
 import com.tek.trp.model.Email;
@@ -64,6 +61,7 @@ public class CustomerServiceImpl implements CustomerService {
 
 	}
 
+
 	@Override
 	public List<Customer> searchCustomer(Customer customer) throws CustomerNotFoundException {
 		List<Customer> listCustomer = new ArrayList();
@@ -100,6 +98,16 @@ public class CustomerServiceImpl implements CustomerService {
 			throw new CustomerNotFoundException("There is a problem to find a customer,Please try after sometime");
 		}
 		return listCustomer;
+	}
+
+	public Customer addCustomer(Customer customer){
+		customer.setCustomerId(String.valueOf(Math.random() * 90000000 + 1));
+		return customerRepository.save(customer);
+	}
+
+	@Override
+	public List<Customer> getCustomers(){
+		return customerRepository.findAll();
 	}
 
 }

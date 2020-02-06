@@ -25,7 +25,9 @@ public interface CustomerService {
 
 	public List<Customer> searchCustomer(Customer c) throws CustomerNotFoundException;
 
+	Customer addCustomer(Customer customer);
 
+	List<Customer> getCustomers();
 	
 
 }
