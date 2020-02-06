@@ -29,4 +29,10 @@ public interface CustomerRepository extends JpaRepository<Customer, Integer>{
 		List<Customer> findCustomerByNameAndCustomerId(@Param("name") String customerName, @Param("customerId") String customerId);
 
 
+	    Optional<Customer> findByCustomerId(String customerId);
+
+	    Optional<Customer> findByCustomerIdAndCustomerName(String customerId, String customerName);
+
+	    Optional<List<Customer>> findByCustomerName(String firstName);
+
 }

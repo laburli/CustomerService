@@ -57,12 +57,12 @@ public class Customer {
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "customer",
 			cascade = CascadeType.ALL)
 	@EqualsAndHashCode.Exclude
-    @ToString.Exclude	
+    @ToString.Exclude
 	private Set<Email> email;
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "customer",
 			cascade = CascadeType.ALL)
 	@EqualsAndHashCode.Exclude
-    @ToString.Exclude	
+    @ToString.Exclude
 	private Set<PhoneNumber> phoneNumber;
 	@Column(name = "CreatedBy")
 	private String createdBy;
@@ -75,6 +75,6 @@ public class Customer {
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "customer",
 			cascade = CascadeType.ALL)
 	@EqualsAndHashCode.Exclude
-    @ToString.Exclude	
+    @ToString.Exclude
 	private Set<Address> address;
 }
