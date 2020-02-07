@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
+import com.tek.trp.exception.CustomerCreationException;
 import com.tek.trp.exception.CustomerNotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,6 +22,8 @@ import com.tek.trp.model.PhoneNumber;
 import com.tek.trp.repository.CustomerRepository;
 import com.tek.trp.service.CustomerService;
 
+import javax.validation.constraints.Pattern;
+
 /**
  * @author raadari
  *
@@ -33,7 +36,9 @@ public class CustomerServiceImpl implements CustomerService {
 	private CustomerRepository customerRepository;
 
 	@Override
-	public Customer saveCustomer(Customer c) {
+	public Customer saveCustomer(Customer c){
+		if(c.getCustomerName()==null || c.getCustomerName().trim().isEmpty() )
+			throw new CustomerCreationException();
 		Set<Address> a = c.getAddress();
 		Set<Email> e = c.getEmail();
 		Set<PhoneNumber> pn = c.getPhoneNumber();
@@ -43,7 +48,7 @@ public class CustomerServiceImpl implements CustomerService {
 		c.setAddress(a);
 		c.setEmail(e);
 		c.setPhoneNumber(pn);
-		c.setCustomerId(String.valueOf(Math.random() * 90000000 + 1));
+		c.setCustomerId(String.valueOf((int)(Math.random() * 90000000 + 1)));
 		logger.debug("Customer {}",c);
 		return customerRepository.save(c);
 	}
