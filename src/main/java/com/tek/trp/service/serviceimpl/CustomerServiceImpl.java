@@ -10,6 +10,7 @@ import java.util.Set;
 
 import com.tek.trp.exception.CustomerCreationException;
 import com.tek.trp.exception.CustomerNotFoundException;
+import com.tek.trp.service.CustomerService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +21,6 @@ import com.tek.trp.model.Customer;
 import com.tek.trp.model.Email;
 import com.tek.trp.model.PhoneNumber;
 import com.tek.trp.repository.CustomerRepository;
-import com.tek.trp.service.CustomerService;
 
 import javax.validation.constraints.Pattern;
 
@@ -87,7 +87,6 @@ public class CustomerServiceImpl implements CustomerService {
 						throw new CustomerNotFoundException("There is no customer with this id :" + customer.getCustomerId() + " and name:" + customer.getCustomerName());
 					}
 				} else {
-					// findById;
 					Optional<Customer> byCustomerId = customerRepository.findByCustomerId(customer.getCustomerId());
 					if (byCustomerId.isPresent()) {
 						Customer customerId = byCustomerId.get();
@@ -97,7 +96,6 @@ public class CustomerServiceImpl implements CustomerService {
 					}
 				}
 			} else {
-				// findByName;
 				Optional<List<Customer>> byFirstName = customerRepository.findByCustomerName(customer.getCustomerName());
 				if (byFirstName.isPresent()) {
 					listCustomer = byFirstName.get();
