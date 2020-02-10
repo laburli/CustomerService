@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import com.tek.trp.model.Customer;
 import com.tek.trp.service.CustomerService;
 
+import javax.validation.Valid;
 import java.util.List;
 
 /**
@@ -33,10 +34,20 @@ public class CustomerController {
 		return customerService.updateCustomer(c);
 	}
 
-
 	@GetMapping(value = "/searchCustomer")
 	public @ResponseBody  List<Customer> searchCustomer(@RequestBody Customer searchCustomer) throws CustomerNotFoundException {
 		return customerService.searchCustomer(searchCustomer);
 	}
-	
+
+	@GetMapping("/viewAll-Customers")
+	public List<Customer> getAllCustomer(){
+		return customerService.getCustomers();
+	}
+
+	@PostMapping("/create-customer")
+	public Customer createCustomer(@Valid @RequestBody Customer customer){
+		return customerService.saveCustomer(customer);
+	}
+
+
 }
