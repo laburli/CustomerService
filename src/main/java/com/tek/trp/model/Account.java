@@ -24,28 +24,35 @@ import lombok.ToString;
  *
  */
 @Entity
-@Table(name = "PhoneNumber")
-@Data
-public class PhoneNumber {
+@Table(name = "Account")
+@Data	
+public class Account {
 	@Id
-	@Column(name = "PhoneNumberId")
+	@Column(name = "accountId")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int Id;
-	@Column(name = "PhoneType")
-	String phoneType;
-	@Column(name = "CityCode")
-	int cityCode;
-	@Column(name = "CountryCode")
-	int countryCode;
-	@Column(name = "PhoneNumber")
-	String number;
-	@Column(name = "CustomerStatus")
-	private String customerStatus;
+	private int id;
+	@Column(name = "AccountType")
+	String accountType ;
+	@Column(name = "BranchId")
+	private int branchId;
+	@Column(name = "AccountNumber")
+	private String accountNumber;
+	@Column(name = "BranchName")
+	private String branchName;
+	@Column(name = "BranchCity")
+	private String branchCity;
+	@Column(name = "BranchState")
+	private String branchState;
+	@Column(name = "BranchCountry")
+	private String branchCountry;
+	@Column(name = "IFSCCode")
+	private String ifscCode;
+	@Column(name = "AccountStatus")
+	private String accountStatus;
 	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "CustomerId")
-	@JsonProperty("CustomerId")
+	@JoinColumn(name = "customerId")
+	@JsonProperty("customerId")
 	@EqualsAndHashCode.Exclude
-	@ToString.Exclude
+    @ToString.Exclude		
 	private Customer customer;
-
 }

@@ -13,10 +13,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonIdentityReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -51,10 +48,8 @@ public class Address {
 	@Column(name = "customerStatus")
 	private String customerStatus;
 	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "CID")
-	 @JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
-    @JsonIdentityReference(alwaysAsId=true)
-	@JsonProperty("CID")
+	@JoinColumn(name = "customerId")
+	@JsonProperty("customerId")
 	@EqualsAndHashCode.Exclude
     @ToString.Exclude		
 	private Customer customer;

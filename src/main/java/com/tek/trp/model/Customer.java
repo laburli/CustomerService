@@ -28,42 +28,21 @@ import lombok.ToString;
 @Table(name = "Customer")
 @Data
 public class Customer {
-	@Id
+
 	@Column(name = "CID")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	@Column(name = "CustomerName")
 	private String customerName;
-	@Column(name = "CustomerId")
-	private String customerId;
 	@Column(name = "Lastname")
 	private String lastname;
 	@Column(name = "MiddleName")
 	private String middleName;
-	@Column(name = "BranchId")
-	private int branchId;
-	@Column(name = "BranchName")
-	private String branchName;
-	@Column(name = "BranchCity")
-	private String branchCity;
-	@Column(name = "BranchState")
-	private String branchState;
-	@Column(name = "BranchCountry")
-	private String branchCountry;
-	@Column(name = "IFSCCode")
-	private String ifscCode;
+	@Id
+	@Column(name = "CustomerId")
+	private String customerId;
 	@Column(name = "CustomerStatus")
 	private String customerStatus;
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "customer",
-			cascade = CascadeType.ALL)
-	@EqualsAndHashCode.Exclude
-    @ToString.Exclude	
-	private Set<Email> email;
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "customer",
-			cascade = CascadeType.ALL)
-	@EqualsAndHashCode.Exclude
-    @ToString.Exclude	
-	private Set<PhoneNumber> phoneNumber;
 	@Column(name = "CreatedBy")
 	private String createdBy;
 	@Column(name = "CreatedOn")
@@ -72,9 +51,21 @@ public class Customer {
 	private String modifiedBy;
 	@Column(name = "ModifiedOn")
 	private LocalDateTime modifiedOn;
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "customer",
-			cascade = CascadeType.ALL)
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "customer", cascade = CascadeType.ALL)
 	@EqualsAndHashCode.Exclude
-    @ToString.Exclude	
+	@ToString.Exclude
+	private Set<Email> email;
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "customer", cascade = CascadeType.ALL)
+	@EqualsAndHashCode.Exclude
+	@ToString.Exclude
+	private Set<PhoneNumber> phoneNumber;
+
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "customer", cascade = CascadeType.ALL)
+	@EqualsAndHashCode.Exclude
+	@ToString.Exclude
 	private Set<Address> address;
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "customer", cascade = CascadeType.ALL)
+	@EqualsAndHashCode.Exclude
+	@ToString.Exclude
+	private Set<Account> account;
 }
