@@ -77,4 +77,5 @@ public class Customer {
 	@EqualsAndHashCode.Exclude
     @ToString.Exclude
 	private Set<Address> address;
+
 }

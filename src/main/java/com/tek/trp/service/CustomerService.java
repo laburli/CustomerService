@@ -17,15 +17,12 @@ import java.util.List;
 @Service
 public interface CustomerService {
 
-	
-
 	Customer saveCustomer(Customer c);
 
 	Customer updateCustomer(Customer c);
 
+	List<Customer> getCustomers();
+
 	public List<Customer> searchCustomer(Customer c) throws CustomerNotFoundException;
-
-
-	
 
 }
