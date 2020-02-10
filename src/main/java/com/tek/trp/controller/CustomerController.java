@@ -35,7 +35,7 @@ public class CustomerController {
 	}
 
 	@GetMapping(value = "/searchCustomer")
-	public List<Customer> searchCustomer(@RequestBody Customer searchCustomer) throws CustomerNotFoundException {
+	public @ResponseBody  List<Customer> searchCustomer(@RequestBody Customer searchCustomer) throws CustomerNotFoundException {
 		return customerService.searchCustomer(searchCustomer);
 	}
 

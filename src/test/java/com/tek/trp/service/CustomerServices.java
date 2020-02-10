@@ -1,4 +1,4 @@
-package com.tek.trp.CustomerService.service;
+package com.tek.trp.service;
 
 
 import com.tek.trp.exception.CustomerNotFoundException;
