@@ -1,9 +1,7 @@
-package com.tek.trp.CustomerService.controller;
+package com.tek.trp.controller;
 
 
 import com.google.gson.Gson;
-import com.tek.trp.CustomerServiceApplication;
-import com.tek.trp.controller.CustomerController;
 import com.tek.trp.model.Address;
 import com.tek.trp.model.Customer;
 import com.tek.trp.model.Email;
@@ -11,7 +9,6 @@ import com.tek.trp.model.PhoneNumber;
 import com.tek.trp.service.CustomerService;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.platform.engine.TestExecutionResult;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -23,6 +20,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
@@ -38,7 +36,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = CustomerServiceApplication.class)
+@TestPropertySource(locations = "/application.properties")
 @SpringBootTest
 public class CustomerControllerTest {
 

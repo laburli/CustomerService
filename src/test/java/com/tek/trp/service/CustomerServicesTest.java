@@ -1,4 +1,4 @@
-package com.tek.trp.CustomerService.service;
+package com.tek.trp.service;
 
 
 import com.tek.trp.exception.CustomerNotFoundException;
@@ -23,7 +23,7 @@ import java.util.Optional;
 import static org.mockito.ArgumentMatchers.any;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-public class CustomerServices {
+public class CustomerServicesTest {
 
 
     @Mock

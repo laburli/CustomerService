@@ -13,10 +13,6 @@ import com.tek.trp.service.CustomerService;
 import javax.validation.Valid;
 import java.util.List;
 
-/**
- * @author raadari
- *
- */
 @RestController
 @RequestMapping("/api")
 public class CustomerController {
@@ -44,7 +40,7 @@ public class CustomerController {
 		return customerService.getCustomers();
 	}
 
-	@PostMapping("/create-customer")
+	@PostMapping(value = "/create-customer")
 	public Customer createCustomer(@Valid @RequestBody Customer customer){
 		return customerService.saveCustomer(customer);
 	}
