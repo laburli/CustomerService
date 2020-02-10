@@ -1,91 +1,63 @@
-2020-02-06 00:39:29.556  INFO 8408 --- [main] c.t.t.C.c.CustomerControllerTest         : Starting CustomerControllerTest on HSC-PG01Y4XQ with PID 8408 (started by mrout in D:\TRP-CCP\05022020_customerService\CustomerService)
-2020-02-06 00:39:29.573 DEBUG 8408 --- [main] c.t.t.C.c.CustomerControllerTest         : Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
-2020-02-06 00:39:29.574  INFO 8408 --- [main] c.t.t.C.c.CustomerControllerTest         : No active profile set, falling back to default profiles: default
-2020-02-06 00:39:29.671 DEBUG 8408 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@4d1bf319
-2020-02-06 00:39:31.388  INFO 8408 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2020-02-06 00:39:31.555  INFO 8408 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 149ms. Found 4 JPA repository interfaces.
-2020-02-06 00:39:32.176  INFO 8408 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-02-06 00:39:32.594  INFO 8408 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-02-06 00:39:32.702  INFO 8408 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.10.Final}
-2020-02-06 00:39:32.962  INFO 8408 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-02-06 00:39:33.306  INFO 8408 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-02-06 00:39:34.057  INFO 8408 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-02-06 00:39:34.095  INFO 8408 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-2020-02-06 00:39:34.514  WARN 8408 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: No identifier specified for entity: com.tek.trp.model.Customer
-2020-02-06 00:39:34.515  INFO 8408 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2020-02-06 00:39:34.530  INFO 8408 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2020-02-06 00:39:34.554  INFO 8408 --- [main] ConditionEvaluationReportLoggingListener : 
+2020-02-09 15:20:29.175  INFO 38872 --- [main] c.t.t.controller.CustomerControllerTest  : Starting CustomerControllerTest on HSC-PG01Y4XQ with PID 38872 (started by mrout in D:\TRP-CCP\05022020_customerService\CustomerService)
+2020-02-09 15:20:29.246 DEBUG 38872 --- [main] c.t.t.controller.CustomerControllerTest  : Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2020-02-09 15:20:29.251  INFO 38872 --- [main] c.t.t.controller.CustomerControllerTest  : No active profile set, falling back to default profiles: default
+2020-02-09 15:20:29.312 DEBUG 38872 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@1db0ec27
+2020-02-09 15:20:30.765  WARN 38872 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'customerServiceImpl': Unsatisfied dependency expressed through field 'customerRepository'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.tek.trp.repository.CustomerRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-02-09 15:20:30.782  INFO 38872 --- [main] ConditionEvaluationReportLoggingListener : 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2020-02-06 00:39:34.569 ERROR 8408 --- [main] o.s.boot.SpringApplication               : Application run failed
+2020-02-09 15:20:30.847 ERROR 38872 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
 
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: No identifier specified for entity: com.tek.trp.model.Customer
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1796) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1108) ~[spring-context-5.2.3.RELEASE.jar:5.2.3.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868) ~[spring-context-5.2.3.RELEASE.jar:5.2.3.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550) ~[spring-context-5.2.3.RELEASE.jar:5.2.3.RELEASE]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747) ~[spring-boot-2.2.4.RELEASE.jar:2.2.4.RELEASE]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) ~[spring-boot-2.2.4.RELEASE.jar:2.2.4.RELEASE]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.2.4.RELEASE.jar:2.2.4.RELEASE]
-	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:126) [spring-boot-test-2.2.4.RELEASE.jar:2.2.4.RELEASE]
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99) [spring-test-5.2.3.RELEASE.jar:5.2.3.RELEASE]
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124) [spring-test-5.2.3.RELEASE.jar:5.2.3.RELEASE]
-	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:123) [spring-test-5.2.3.RELEASE.jar:5.2.3.RELEASE]
-	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190) [spring-test-5.2.3.RELEASE.jar:5.2.3.RELEASE]
-	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132) [spring-test-5.2.3.RELEASE.jar:5.2.3.RELEASE]
-	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:244) [spring-test-5.2.3.RELEASE.jar:5.2.3.RELEASE]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227) [spring-test-5.2.3.RELEASE.jar:5.2.3.RELEASE]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289) [spring-test-5.2.3.RELEASE.jar:5.2.3.RELEASE]
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.13.jar:4.13]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291) [spring-test-5.2.3.RELEASE.jar:5.2.3.RELEASE]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246) [spring-test-5.2.3.RELEASE.jar:5.2.3.RELEASE]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) [spring-test-5.2.3.RELEASE.jar:5.2.3.RELEASE]
-	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) [junit-4.13.jar:4.13]
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) [junit-4.13.jar:4.13]
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) [junit-4.13.jar:4.13]
-	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) [junit-4.13.jar:4.13]
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) [junit-4.13.jar:4.13]
-	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-5.2.3.RELEASE.jar:5.2.3.RELEASE]
-	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-5.2.3.RELEASE.jar:5.2.3.RELEASE]
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) [junit-4.13.jar:4.13]
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) [junit-4.13.jar:4.13]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) [spring-test-5.2.3.RELEASE.jar:5.2.3.RELEASE]
-	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) [junit-4.13.jar:4.13]
-	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68) [junit-rt.jar:na]
-	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47) [junit-rt.jar:na]
-	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242) [junit-rt.jar:na]
-	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70) [junit-rt.jar:na]
-Caused by: org.hibernate.AnnotationException: No identifier specified for entity: com.tek.trp.model.Customer
-	at org.hibernate.cfg.InheritanceState.determineDefaultAccessType(InheritanceState.java:266) ~[hibernate-core-5.4.10.Final.jar:5.4.10.Final]
-	at org.hibernate.cfg.InheritanceState.getElementsToProcess(InheritanceState.java:211) ~[hibernate-core-5.4.10.Final.jar:5.4.10.Final]
-	at org.hibernate.cfg.AnnotationBinder.bindClass(AnnotationBinder.java:781) ~[hibernate-core-5.4.10.Final.jar:5.4.10.Final]
-	at org.hibernate.boot.model.source.internal.annotations.AnnotationMetadataSourceProcessorImpl.processEntityHierarchies(AnnotationMetadataSourceProcessorImpl.java:254) ~[hibernate-core-5.4.10.Final.jar:5.4.10.Final]
-	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess$1.processEntityHierarchies(MetadataBuildingProcess.java:230) ~[hibernate-core-5.4.10.Final.jar:5.4.10.Final]
-	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:273) ~[hibernate-core-5.4.10.Final.jar:5.4.10.Final]
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1202) ~[hibernate-core-5.4.10.Final.jar:5.4.10.Final]
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1233) ~[hibernate-core-5.4.10.Final.jar:5.4.10.Final]
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.2.3.RELEASE.jar:5.2.3.RELEASE]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.2.3.RELEASE.jar:5.2.3.RELEASE]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391) ~[spring-orm-5.2.3.RELEASE.jar:5.2.3.RELEASE]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:378) ~[spring-orm-5.2.3.RELEASE.jar:5.2.3.RELEASE]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.2.3.RELEASE.jar:5.2.3.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1855) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1792) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
-	... 40 common frames omitted
+***************************
+APPLICATION FAILED TO START
+***************************
 
-2020-02-06 00:39:34.572 ERROR 8408 --- [main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@6ae5aa72] to prepare test instance [com.tek.trp.CustomerService.controller.CustomerControllerTest@6661d8c0]
+Description:
+
+Field customerRepository in com.tek.trp.service.CustomerServiceImpl required a bean of type 'com.tek.trp.repository.CustomerRepository' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.tek.trp.repository.CustomerRepository' in your configuration.
+
+2020-02-09 15:20:30.942  INFO 38872 --- [main] c.t.t.controller.CustomerControllerTest  : Starting CustomerControllerTest on HSC-PG01Y4XQ with PID 38872 (started by mrout in D:\TRP-CCP\05022020_customerService\CustomerService)
+2020-02-09 15:20:30.943 DEBUG 38872 --- [main] c.t.t.controller.CustomerControllerTest  : Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2020-02-09 15:20:30.945  INFO 38872 --- [main] c.t.t.controller.CustomerControllerTest  : No active profile set, falling back to default profiles: default
+2020-02-09 15:20:30.953 DEBUG 38872 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@4da6d664
+2020-02-09 15:20:31.370  WARN 38872 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'customerServiceImpl': Unsatisfied dependency expressed through field 'customerRepository'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.tek.trp.repository.CustomerRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-02-09 15:20:31.372  INFO 38872 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-02-09 15:20:31.416 ERROR 38872 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field customerRepository in com.tek.trp.service.CustomerServiceImpl required a bean of type 'com.tek.trp.repository.CustomerRepository' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.tek.trp.repository.CustomerRepository' in your configuration.
+
+2020-02-09 15:20:31.433 ERROR 38872 --- [main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@4bff7da0] to prepare test instance [com.tek.trp.controller.CustomerControllerTest@1941a8ff]
 
 java.lang.IllegalStateException: Failed to load ApplicationContext
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:132) ~[spring-test-5.2.3.RELEASE.jar:5.2.3.RELEASE]
 	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:123) ~[spring-test-5.2.3.RELEASE.jar:5.2.3.RELEASE]
-	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190) ~[spring-test-5.2.3.RELEASE.jar:5.2.3.RELEASE]
-	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132) ~[spring-test-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:118) ~[spring-test-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83) ~[spring-test-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener.prepareTestInstance(SpringBootDependencyInjectionTestExecutionListener.java:43) ~[spring-boot-test-autoconfigure-2.2.4.RELEASE.jar:2.2.4.RELEASE]
 	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:244) ~[spring-test-5.2.3.RELEASE.jar:5.2.3.RELEASE]
 	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227) [spring-test-5.2.3.RELEASE.jar:5.2.3.RELEASE]
 	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289) [spring-test-5.2.3.RELEASE.jar:5.2.3.RELEASE]
@@ -108,16 +80,19 @@ java.lang.IllegalStateException: Failed to load ApplicationContext
 	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47) [junit-rt.jar:na]
 	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242) [junit-rt.jar:na]
 	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70) [junit-rt.jar:na]
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: No identifier specified for entity: com.tek.trp.model.Customer
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1796) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'customerServiceImpl': Unsatisfied dependency expressed through field 'customerRepository'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.tek.trp.repository.CustomerRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:116) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1422) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
 	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1108) ~[spring-context-5.2.3.RELEASE.jar:5.2.3.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868) ~[spring-context-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:879) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:878) ~[spring-context-5.2.3.RELEASE.jar:5.2.3.RELEASE]
 	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550) ~[spring-context-5.2.3.RELEASE.jar:5.2.3.RELEASE]
 	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747) ~[spring-boot-2.2.4.RELEASE.jar:2.2.4.RELEASE]
 	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) ~[spring-boot-2.2.4.RELEASE.jar:2.2.4.RELEASE]
@@ -125,96 +100,711 @@ Caused by: org.springframework.beans.factory.BeanCreationException: Error creati
 	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:126) ~[spring-boot-test-2.2.4.RELEASE.jar:2.2.4.RELEASE]
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99) ~[spring-test-5.2.3.RELEASE.jar:5.2.3.RELEASE]
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124) ~[spring-test-5.2.3.RELEASE.jar:5.2.3.RELEASE]
-	... 25 common frames omitted
-Caused by: org.hibernate.AnnotationException: No identifier specified for entity: com.tek.trp.model.Customer
-	at org.hibernate.cfg.InheritanceState.determineDefaultAccessType(InheritanceState.java:266) ~[hibernate-core-5.4.10.Final.jar:5.4.10.Final]
-	at org.hibernate.cfg.InheritanceState.getElementsToProcess(InheritanceState.java:211) ~[hibernate-core-5.4.10.Final.jar:5.4.10.Final]
-	at org.hibernate.cfg.AnnotationBinder.bindClass(AnnotationBinder.java:781) ~[hibernate-core-5.4.10.Final.jar:5.4.10.Final]
-	at org.hibernate.boot.model.source.internal.annotations.AnnotationMetadataSourceProcessorImpl.processEntityHierarchies(AnnotationMetadataSourceProcessorImpl.java:254) ~[hibernate-core-5.4.10.Final.jar:5.4.10.Final]
-	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess$1.processEntityHierarchies(MetadataBuildingProcess.java:230) ~[hibernate-core-5.4.10.Final.jar:5.4.10.Final]
-	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:273) ~[hibernate-core-5.4.10.Final.jar:5.4.10.Final]
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1202) ~[hibernate-core-5.4.10.Final.jar:5.4.10.Final]
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1233) ~[hibernate-core-5.4.10.Final.jar:5.4.10.Final]
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.2.3.RELEASE.jar:5.2.3.RELEASE]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.2.3.RELEASE.jar:5.2.3.RELEASE]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391) ~[spring-orm-5.2.3.RELEASE.jar:5.2.3.RELEASE]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:378) ~[spring-orm-5.2.3.RELEASE.jar:5.2.3.RELEASE]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.2.3.RELEASE.jar:5.2.3.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1855) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1792) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
-	... 40 common frames omitted
+	... 26 common frames omitted
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.tek.trp.repository.CustomerRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1695) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1253) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	... 44 common frames omitted
 
-2020-02-06 00:46:40.601  INFO 4856 --- [main] c.t.t.C.c.CustomerControllerTest         : Starting CustomerControllerTest on HSC-PG01Y4XQ with PID 4856 (started by mrout in D:\TRP-CCP\05022020_customerService\CustomerService)
-2020-02-06 00:46:40.604 DEBUG 4856 --- [main] c.t.t.C.c.CustomerControllerTest         : Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
-2020-02-06 00:46:40.605  INFO 4856 --- [main] c.t.t.C.c.CustomerControllerTest         : No active profile set, falling back to default profiles: default
-2020-02-06 00:46:40.685 DEBUG 4856 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@4f32a3ad
-2020-02-06 00:46:41.861  INFO 4856 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2020-02-06 00:46:41.968  INFO 4856 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 96ms. Found 4 JPA repository interfaces.
-2020-02-06 00:46:42.473  INFO 4856 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-02-06 00:46:43.032  INFO 4856 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-02-06 00:46:43.150  INFO 4856 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.10.Final}
-2020-02-06 00:46:43.419  INFO 4856 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-02-06 00:46:43.841  INFO 4856 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-02-06 00:46:44.499  INFO 4856 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-02-06 00:46:44.529  INFO 4856 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-2020-02-06 00:46:46.387  INFO 4856 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-02-06 00:46:46.398  INFO 4856 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-02-06 00:46:47.397  INFO 4856 --- [main] com.tek.trp.config.DBConfiguration       : DB connection
-2020-02-06 00:46:47.398  INFO 4856 --- [main] com.tek.trp.config.DBConfiguration       : com.mysql.cj.jdbc.Driver
-2020-02-06 00:46:47.398  INFO 4856 --- [main] com.tek.trp.config.DBConfiguration       : jdbc:mysql://localhost:3306/digipoc
-2020-02-06 00:46:48.043  WARN 4856 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-02-06 00:46:48.747  INFO 4856 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-02-06 00:46:48.781 DEBUG 4856 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2020-02-06 00:46:48.912 DEBUG 4856 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 5 mappings in 'requestMappingHandlerMapping'
-2020-02-06 00:46:49.022 DEBUG 4856 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2020-02-06 00:46:49.053 DEBUG 4856 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
-2020-02-06 00:46:49.719  INFO 4856 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
-2020-02-06 00:46:49.841  INFO 4856 --- [main] c.t.t.C.c.CustomerControllerTest         : Started CustomerControllerTest in 9.862 seconds (JVM running for 11.156)
-2020-02-06 00:46:50.188 DEBUG 4856 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 3 mappings in <unknown>
-2020-02-06 00:46:50.194 DEBUG 4856 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2020-02-06 00:46:50.197 DEBUG 4856 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2020-02-06 00:46:50.207  INFO 4856 --- [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
-2020-02-06 00:46:50.208  INFO 4856 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2020-02-06 00:46:50.209  INFO 4856 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2020-02-06 00:46:50.264 DEBUG 4856 --- [SpringContextShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@4f32a3ad, started on Thu Feb 06 00:46:40 IST 2020
-2020-02-06 00:46:50.269  INFO 4856 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-02-06 00:46:50.273  INFO 4856 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2020-02-06 00:46:50.277  INFO 4856 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2020-02-06 00:46:50.299  INFO 4856 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2020-02-06 00:48:24.332  INFO 31580 --- [main] c.t.t.C.c.CustomerControllerTest         : Starting CustomerControllerTest on HSC-PG01Y4XQ with PID 31580 (started by mrout in D:\TRP-CCP\05022020_customerService\CustomerService)
-2020-02-06 00:48:24.334 DEBUG 31580 --- [main] c.t.t.C.c.CustomerControllerTest         : Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
-2020-02-06 00:48:24.335  INFO 31580 --- [main] c.t.t.C.c.CustomerControllerTest         : No active profile set, falling back to default profiles: default
-2020-02-06 00:48:24.391 DEBUG 31580 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@6b695b06
-2020-02-06 00:48:25.488  INFO 31580 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2020-02-06 00:48:25.620  INFO 31580 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 112ms. Found 4 JPA repository interfaces.
-2020-02-06 00:48:26.125  INFO 31580 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-02-06 00:48:26.557  INFO 31580 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-02-06 00:48:26.742  INFO 31580 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.10.Final}
-2020-02-06 00:48:27.107  INFO 31580 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-02-06 00:48:27.529  INFO 31580 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-02-06 00:48:28.520  INFO 31580 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-02-06 00:48:28.567  INFO 31580 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-2020-02-06 00:48:30.202  INFO 31580 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-02-06 00:48:30.211  INFO 31580 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-02-06 00:48:31.215  INFO 31580 --- [main] com.tek.trp.config.DBConfiguration       : DB connection
-2020-02-06 00:48:31.215  INFO 31580 --- [main] com.tek.trp.config.DBConfiguration       : com.mysql.cj.jdbc.Driver
-2020-02-06 00:48:31.215  INFO 31580 --- [main] com.tek.trp.config.DBConfiguration       : jdbc:mysql://localhost:3306/digipoc
-2020-02-06 00:48:31.970  WARN 31580 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-02-06 00:48:32.819  INFO 31580 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-02-06 00:48:32.860 DEBUG 31580 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2020-02-06 00:48:33.007 DEBUG 31580 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 5 mappings in 'requestMappingHandlerMapping'
-2020-02-06 00:48:33.111 DEBUG 31580 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2020-02-06 00:48:33.141 DEBUG 31580 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
-2020-02-06 00:48:33.804  INFO 31580 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
-2020-02-06 00:48:33.917  INFO 31580 --- [main] c.t.t.C.c.CustomerControllerTest         : Started CustomerControllerTest in 10.259 seconds (JVM running for 11.788)
-2020-02-06 00:48:34.315 DEBUG 31580 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 3 mappings in <unknown>
-2020-02-06 00:48:34.325 DEBUG 31580 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2020-02-06 00:48:34.329 DEBUG 31580 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2020-02-06 00:48:34.342  INFO 31580 --- [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
-2020-02-06 00:48:34.343  INFO 31580 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2020-02-06 00:48:34.343  INFO 31580 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-2020-02-06 00:48:34.417 DEBUG 31580 --- [SpringContextShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@6b695b06, started on Thu Feb 06 00:48:24 IST 2020
-2020-02-06 00:48:34.425  INFO 31580 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-02-06 00:48:34.431  INFO 31580 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2020-02-06 00:48:34.434  INFO 31580 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2020-02-06 00:48:34.453  INFO 31580 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-02-09 15:21:32.097  INFO 36184 --- [main] c.t.t.controller.CustomerControllerTest  : Starting CustomerControllerTest on HSC-PG01Y4XQ with PID 36184 (started by mrout in D:\TRP-CCP\05022020_customerService\CustomerService)
+2020-02-09 15:21:32.099 DEBUG 36184 --- [main] c.t.t.controller.CustomerControllerTest  : Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2020-02-09 15:21:32.099  INFO 36184 --- [main] c.t.t.controller.CustomerControllerTest  : No active profile set, falling back to default profiles: default
+2020-02-09 15:21:32.205 DEBUG 36184 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@3c8bdd5b
+2020-02-09 15:21:33.436  INFO 36184 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-02-09 15:21:33.619  INFO 36184 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 160ms. Found 4 JPA repository interfaces.
+2020-02-09 15:21:34.484  INFO 36184 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-09 15:21:34.968  INFO 36184 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-02-09 15:21:35.142  INFO 36184 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-09 15:21:35.553  INFO 36184 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-09 15:21:35.957  INFO 36184 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-02-09 15:21:36.863  INFO 36184 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-02-09 15:21:36.915  INFO 36184 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2020-02-09 15:21:39.024  INFO 36184 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-09 15:21:39.043  INFO 36184 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-02-09 15:21:40.581  WARN 36184 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-02-09 15:21:41.765  INFO 36184 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-09 15:21:41.813 DEBUG 36184 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-02-09 15:21:41.983 DEBUG 36184 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 5 mappings in 'requestMappingHandlerMapping'
+2020-02-09 15:21:42.141 DEBUG 36184 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2020-02-09 15:21:42.175 DEBUG 36184 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-02-09 15:21:42.985  INFO 36184 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-02-09 15:21:43.116  INFO 36184 --- [main] c.t.t.controller.CustomerControllerTest  : Started CustomerControllerTest in 11.431 seconds (JVM running for 13.053)
+2020-02-09 15:21:43.280 ERROR 36184 --- [main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@8e50104] to prepare test instance [com.tek.trp.controller.CustomerControllerTest@69cc3370]
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'com.tek.trp.controller.CustomerControllerTest': Unsatisfied dependency expressed through field 'mockMvc'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.test.web.servlet.MockMvc' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:116) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1422) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireBeanProperties(AbstractAutowireCapableBeanFactory.java:393) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:119) ~[spring-test-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83) ~[spring-test-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener.prepareTestInstance(SpringBootDependencyInjectionTestExecutionListener.java:43) ~[spring-boot-test-autoconfigure-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:244) ~[spring-test-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227) [spring-test-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289) [spring-test-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.13.jar:4.13]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291) [spring-test-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246) [spring-test-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) [spring-test-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) [junit-4.13.jar:4.13]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) [junit-4.13.jar:4.13]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) [junit-4.13.jar:4.13]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) [junit-4.13.jar:4.13]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) [junit-4.13.jar:4.13]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) [junit-4.13.jar:4.13]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) [junit-4.13.jar:4.13]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) [spring-test-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) [junit-4.13.jar:4.13]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68) [junit-rt.jar:na]
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47) [junit-rt.jar:na]
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242) [junit-rt.jar:na]
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70) [junit-rt.jar:na]
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.test.web.servlet.MockMvc' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1695) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1253) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	... 29 common frames omitted
+
+2020-02-09 15:21:43.303 DEBUG 36184 --- [SpringContextShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@3c8bdd5b, started on Sun Feb 09 15:21:32 IST 2020
+2020-02-09 15:21:43.308  INFO 36184 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-02-09 15:21:43.312  INFO 36184 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-02-09 15:21:43.315  INFO 36184 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-02-09 15:21:43.331  INFO 36184 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-02-09 15:22:44.074  INFO 23984 --- [main] c.t.t.controller.CustomerControllerTest  : Starting CustomerControllerTest on HSC-PG01Y4XQ with PID 23984 (started by mrout in D:\TRP-CCP\05022020_customerService\CustomerService)
+2020-02-09 15:22:44.075 DEBUG 23984 --- [main] c.t.t.controller.CustomerControllerTest  : Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2020-02-09 15:22:44.076  INFO 23984 --- [main] c.t.t.controller.CustomerControllerTest  : No active profile set, falling back to default profiles: default
+2020-02-09 15:22:44.166 DEBUG 23984 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@54e7391d
+2020-02-09 15:22:45.281  INFO 23984 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-02-09 15:22:45.399  INFO 23984 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 103ms. Found 4 JPA repository interfaces.
+2020-02-09 15:22:45.933  INFO 23984 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-09 15:22:46.383  INFO 23984 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-02-09 15:22:46.515  INFO 23984 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-09 15:22:46.824  INFO 23984 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-09 15:22:47.244  INFO 23984 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-02-09 15:22:48.083  INFO 23984 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-02-09 15:22:48.120  INFO 23984 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2020-02-09 15:22:50.329  INFO 23984 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-09 15:22:50.344  INFO 23984 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-02-09 15:22:52.970  WARN 23984 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-02-09 15:22:54.149  INFO 23984 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-09 15:22:54.203 DEBUG 23984 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-02-09 15:22:54.402 DEBUG 23984 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 5 mappings in 'requestMappingHandlerMapping'
+2020-02-09 15:22:54.577 DEBUG 23984 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2020-02-09 15:22:54.618 DEBUG 23984 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-02-09 15:22:55.686  INFO 23984 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-02-09 15:22:56.016  INFO 23984 --- [main] c.t.t.controller.CustomerControllerTest  : Started CustomerControllerTest in 12.383 seconds (JVM running for 14.023)
+2020-02-09 15:22:56.198 ERROR 23984 --- [main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@3af0a9da] to prepare test instance [com.tek.trp.controller.CustomerControllerTest@1267f832]
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'com.tek.trp.controller.CustomerControllerTest': Unsatisfied dependency expressed through field 'mockMvc'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.test.web.servlet.MockMvc' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:116) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1422) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireBeanProperties(AbstractAutowireCapableBeanFactory.java:393) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:119) ~[spring-test-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83) ~[spring-test-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener.prepareTestInstance(SpringBootDependencyInjectionTestExecutionListener.java:43) ~[spring-boot-test-autoconfigure-2.2.4.RELEASE.jar:2.2.4.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:244) ~[spring-test-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227) [spring-test-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289) [spring-test-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.13.jar:4.13]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291) [spring-test-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246) [spring-test-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) [spring-test-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) [junit-4.13.jar:4.13]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) [junit-4.13.jar:4.13]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) [junit-4.13.jar:4.13]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) [junit-4.13.jar:4.13]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) [junit-4.13.jar:4.13]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) [junit-4.13.jar:4.13]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) [junit-4.13.jar:4.13]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) [spring-test-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) [junit-4.13.jar:4.13]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68) [junit-rt.jar:na]
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47) [junit-rt.jar:na]
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242) [junit-rt.jar:na]
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70) [junit-rt.jar:na]
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.test.web.servlet.MockMvc' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1695) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1253) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	... 29 common frames omitted
+
+2020-02-09 15:22:56.284 DEBUG 23984 --- [SpringContextShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@54e7391d, started on Sun Feb 09 15:22:44 IST 2020
+2020-02-09 15:22:56.292  INFO 23984 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-02-09 15:22:56.298  INFO 23984 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-02-09 15:22:56.301  INFO 23984 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-02-09 15:22:56.338  INFO 23984 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-02-09 15:25:21.647  INFO 38216 --- [main] c.t.t.controller.CustomerControllerTest  : Starting CustomerControllerTest on HSC-PG01Y4XQ with PID 38216 (started by mrout in D:\TRP-CCP\05022020_customerService\CustomerService)
+2020-02-09 15:25:21.649 DEBUG 38216 --- [main] c.t.t.controller.CustomerControllerTest  : Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2020-02-09 15:25:21.649  INFO 38216 --- [main] c.t.t.controller.CustomerControllerTest  : No active profile set, falling back to default profiles: default
+2020-02-09 15:25:21.743 DEBUG 38216 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@3c8bdd5b
+2020-02-09 15:25:22.771  INFO 38216 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-02-09 15:25:22.906  INFO 38216 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 119ms. Found 4 JPA repository interfaces.
+2020-02-09 15:25:23.452  INFO 38216 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-09 15:25:23.860  INFO 38216 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-02-09 15:25:23.967  INFO 38216 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-09 15:25:24.246  INFO 38216 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-09 15:25:24.640  INFO 38216 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-02-09 15:25:25.480  INFO 38216 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-02-09 15:25:25.520  INFO 38216 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2020-02-09 15:25:27.187  INFO 38216 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-09 15:25:27.205  INFO 38216 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-02-09 15:25:28.935  WARN 38216 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-02-09 15:25:29.727  INFO 38216 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-09 15:25:29.778 DEBUG 38216 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-02-09 15:25:29.942 DEBUG 38216 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 5 mappings in 'requestMappingHandlerMapping'
+2020-02-09 15:25:30.070 DEBUG 38216 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2020-02-09 15:25:30.103 DEBUG 38216 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-02-09 15:25:30.927  INFO 38216 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-02-09 15:25:31.048  INFO 38216 --- [main] c.t.t.controller.CustomerControllerTest  : Started CustomerControllerTest in 9.93 seconds (JVM running for 11.631)
+2020-02-09 15:25:31.299  INFO 38216 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2020-02-09 15:25:31.300  INFO 38216 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-02-09 15:25:31.329  INFO 38216 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 29 ms
+2020-02-09 15:25:38.889 DEBUG 38216 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.tek.trp.controller.CustomerController#searchCustomer(Customer)
+2020-02-09 15:25:39.312 DEBUG 38216 --- [main] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json" to [Customer(id=0, customerName=CPP1, customerId=CPP2, lastname=null, middleName=null, branchId=123, bra (truncated)...]
+2020-02-09 15:25:46.275 DEBUG 38216 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.tek.trp.exceptionhandler.ExceptionHandlerControllerAdvice#handleResourceNotFound(CustomerNotFoundException, HttpServletRequest)
+2020-02-09 15:25:46.285 DEBUG 38216 --- [main] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-02-09 15:25:46.286 DEBUG 38216 --- [main] m.m.a.RequestResponseBodyMethodProcessor : Writing [com.tek.trp.exception.ExceptionResponse@3a0f5141]
+2020-02-09 15:25:46.295 DEBUG 38216 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.tek.trp.exception.CustomerNotFoundException: There is a problem to find a customer,Please try after sometime]
+2020-02-09 15:25:46.314 DEBUG 38216 --- [SpringContextShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@3c8bdd5b, started on Sun Feb 09 15:25:21 IST 2020
+2020-02-09 15:25:46.317  INFO 38216 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-02-09 15:25:46.320  INFO 38216 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-02-09 15:25:46.322  INFO 38216 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-02-09 15:25:46.334  INFO 38216 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-02-09 15:26:27.708  INFO 37008 --- [main] c.t.t.controller.CustomerControllerTest  : Starting CustomerControllerTest on HSC-PG01Y4XQ with PID 37008 (started by mrout in D:\TRP-CCP\05022020_customerService\CustomerService)
+2020-02-09 15:26:27.710 DEBUG 37008 --- [main] c.t.t.controller.CustomerControllerTest  : Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2020-02-09 15:26:27.713  INFO 37008 --- [main] c.t.t.controller.CustomerControllerTest  : No active profile set, falling back to default profiles: default
+2020-02-09 15:26:27.834 DEBUG 37008 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@160c3ec1
+2020-02-09 15:26:29.003  INFO 37008 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-02-09 15:26:29.131  INFO 37008 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 108ms. Found 4 JPA repository interfaces.
+2020-02-09 15:26:29.792  INFO 37008 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-09 15:26:30.234  INFO 37008 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-02-09 15:26:30.370  INFO 37008 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-09 15:26:30.681  INFO 37008 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-09 15:26:31.149  INFO 37008 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-02-09 15:26:32.301  INFO 37008 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-02-09 15:26:32.349  INFO 37008 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2020-02-09 15:26:34.453  INFO 37008 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-09 15:26:34.464  INFO 37008 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-02-09 15:26:36.234  WARN 37008 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-02-09 15:26:37.075  INFO 37008 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-09 15:26:37.117 DEBUG 37008 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-02-09 15:26:37.274 DEBUG 37008 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 5 mappings in 'requestMappingHandlerMapping'
+2020-02-09 15:26:37.425 DEBUG 37008 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2020-02-09 15:26:37.466 DEBUG 37008 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-02-09 15:26:38.290  INFO 37008 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-02-09 15:26:38.402  INFO 37008 --- [main] c.t.t.controller.CustomerControllerTest  : Started CustomerControllerTest in 11.222 seconds (JVM running for 13.15)
+2020-02-09 15:26:38.630  INFO 37008 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2020-02-09 15:26:38.630  INFO 37008 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-02-09 15:26:38.659  INFO 37008 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 28 ms
+2020-02-09 15:26:42.814 DEBUG 37008 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.tek.trp.controller.CustomerController#searchCustomer(Customer)
+2020-02-09 15:26:43.183 DEBUG 37008 --- [main] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json" to [Customer(id=0, customerName=CPP1, customerId=CPP2, lastname=null, middleName=null, branchId=123, bra (truncated)...]
+2020-02-09 15:26:55.874 DEBUG 37008 --- [main] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-02-09 15:26:55.875 DEBUG 37008 --- [main] m.m.a.RequestResponseBodyMethodProcessor : Nothing to write: null body
+2020-02-09 15:27:12.092 DEBUG 37008 --- [SpringContextShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@160c3ec1, started on Sun Feb 09 15:26:27 IST 2020
+2020-02-09 15:27:12.094  INFO 37008 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-02-09 15:27:12.099  INFO 37008 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-02-09 15:27:12.102  INFO 37008 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-02-09 15:27:12.113  INFO 37008 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-02-09 15:28:37.254  INFO 37088 --- [main] c.t.t.controller.CustomerControllerTest  : Starting CustomerControllerTest on HSC-PG01Y4XQ with PID 37088 (started by mrout in D:\TRP-CCP\05022020_customerService\CustomerService)
+2020-02-09 15:28:37.256 DEBUG 37088 --- [main] c.t.t.controller.CustomerControllerTest  : Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2020-02-09 15:28:37.256  INFO 37088 --- [main] c.t.t.controller.CustomerControllerTest  : No active profile set, falling back to default profiles: default
+2020-02-09 15:28:37.358 DEBUG 37088 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@13006998
+2020-02-09 15:28:38.595  INFO 37088 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-02-09 15:28:38.734  INFO 37088 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 122ms. Found 4 JPA repository interfaces.
+2020-02-09 15:28:39.803  INFO 37088 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-09 15:28:40.161  INFO 37088 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-02-09 15:28:40.276  INFO 37088 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-09 15:28:40.357  INFO 37088 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-09 15:28:40.828  INFO 37088 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-02-09 15:28:41.767  INFO 37088 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-02-09 15:28:41.809  INFO 37088 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2020-02-09 15:28:43.095  INFO 37088 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-09 15:28:43.111  INFO 37088 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-02-09 15:28:43.589  WARN 37088 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-02-09 15:28:45.533  INFO 37088 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-09 15:28:45.572 DEBUG 37088 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-02-09 15:28:45.714 DEBUG 37088 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 5 mappings in 'requestMappingHandlerMapping'
+2020-02-09 15:28:45.813 DEBUG 37088 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2020-02-09 15:28:45.848 DEBUG 37088 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-02-09 15:28:46.503  INFO 37088 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-02-09 15:28:46.645  INFO 37088 --- [main] c.t.t.controller.CustomerControllerTest  : Started CustomerControllerTest in 9.861 seconds (JVM running for 11.751)
+2020-02-09 15:28:46.760  INFO 37088 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2020-02-09 15:28:46.760  INFO 37088 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-02-09 15:28:46.785  INFO 37088 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 25 ms
+2020-02-09 15:28:56.490 DEBUG 37088 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.tek.trp.controller.CustomerController#searchCustomer(Customer)
+2020-02-09 15:28:56.665 DEBUG 37088 --- [main] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json" to [Customer(id=0, customerName=CPP1, customerId=CPP2, lastname=null, middleName=null, branchId=123, bra (truncated)...]
+2020-02-09 15:28:56.689 DEBUG 37088 --- [main] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-02-09 15:28:56.690 DEBUG 37088 --- [main] m.m.a.RequestResponseBodyMethodProcessor : Nothing to write: null body
+2020-02-09 15:28:56.706 DEBUG 37088 --- [SpringContextShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@13006998, started on Sun Feb 09 15:28:37 IST 2020
+2020-02-09 15:28:56.724  INFO 37088 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-02-09 15:28:56.730  INFO 37088 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-02-09 15:28:56.737  INFO 37088 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-02-09 15:28:56.759  INFO 37088 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-02-09 15:29:30.308  INFO 37744 --- [main] c.t.t.controller.CustomerControllerTest  : Starting CustomerControllerTest on HSC-PG01Y4XQ with PID 37744 (started by mrout in D:\TRP-CCP\05022020_customerService\CustomerService)
+2020-02-09 15:29:30.310 DEBUG 37744 --- [main] c.t.t.controller.CustomerControllerTest  : Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2020-02-09 15:29:30.311  INFO 37744 --- [main] c.t.t.controller.CustomerControllerTest  : No active profile set, falling back to default profiles: default
+2020-02-09 15:29:30.429 DEBUG 37744 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@560513ce
+2020-02-09 15:29:31.710  INFO 37744 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-02-09 15:29:31.860  INFO 37744 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 132ms. Found 4 JPA repository interfaces.
+2020-02-09 15:29:32.958  INFO 37744 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-09 15:29:33.391  INFO 37744 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-02-09 15:29:33.521  INFO 37744 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-09 15:29:33.590  INFO 37744 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-09 15:29:33.975  INFO 37744 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-02-09 15:29:34.767  INFO 37744 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-02-09 15:29:34.807  INFO 37744 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2020-02-09 15:29:35.997  INFO 37744 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-09 15:29:36.008  INFO 37744 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-02-09 15:29:36.453  WARN 37744 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-02-09 15:29:38.529  INFO 37744 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-09 15:29:38.572 DEBUG 37744 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-02-09 15:29:38.738 DEBUG 37744 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 5 mappings in 'requestMappingHandlerMapping'
+2020-02-09 15:29:38.849 DEBUG 37744 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2020-02-09 15:29:38.888 DEBUG 37744 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-02-09 15:29:39.595  INFO 37744 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-02-09 15:29:39.709  INFO 37744 --- [main] c.t.t.controller.CustomerControllerTest  : Started CustomerControllerTest in 9.943 seconds (JVM running for 12.02)
+2020-02-09 15:29:39.843  INFO 37744 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2020-02-09 15:29:39.843  INFO 37744 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-02-09 15:29:39.885  INFO 37744 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 42 ms
+2020-02-09 15:29:44.996 DEBUG 37744 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.tek.trp.controller.CustomerController#searchCustomer(Customer)
+2020-02-09 15:29:45.383 DEBUG 37744 --- [main] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json" to [Customer(id=0, customerName=CPP1, customerId=CPP2, lastname=null, middleName=null, branchId=123, bra (truncated)...]
+2020-02-09 15:29:50.992 DEBUG 37744 --- [main] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-02-09 15:29:50.993 DEBUG 37744 --- [main] m.m.a.RequestResponseBodyMethodProcessor : Writing [[Customer(id=0, customerName=CPP1, customerId=CPP2, lastname=null, middleName=null, branchId=123, br (truncated)...]
+2020-02-09 15:30:10.901 DEBUG 37744 --- [SpringContextShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@560513ce, started on Sun Feb 09 15:29:30 IST 2020
+2020-02-09 15:30:10.906  INFO 37744 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-02-09 15:30:10.909  INFO 37744 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-02-09 15:30:10.910  INFO 37744 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-02-09 15:30:10.921  INFO 37744 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-02-09 15:31:13.254  INFO 36364 --- [main] c.t.t.controller.CustomerControllerTest  : Starting CustomerControllerTest on HSC-PG01Y4XQ with PID 36364 (started by mrout in D:\TRP-CCP\05022020_customerService\CustomerService)
+2020-02-09 15:31:13.256 DEBUG 36364 --- [main] c.t.t.controller.CustomerControllerTest  : Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2020-02-09 15:31:13.257  INFO 36364 --- [main] c.t.t.controller.CustomerControllerTest  : No active profile set, falling back to default profiles: default
+2020-02-09 15:31:13.377 DEBUG 36364 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@71e9ebae
+2020-02-09 15:31:14.856  INFO 36364 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-02-09 15:31:14.994  INFO 36364 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 120ms. Found 4 JPA repository interfaces.
+2020-02-09 15:31:16.276  INFO 36364 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-09 15:31:16.838  INFO 36364 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-02-09 15:31:16.996  INFO 36364 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-09 15:31:17.076  INFO 36364 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-09 15:31:17.547  INFO 36364 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-02-09 15:31:18.622  INFO 36364 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-02-09 15:31:18.667  INFO 36364 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2020-02-09 15:31:20.444  INFO 36364 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-09 15:31:20.458  INFO 36364 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-02-09 15:31:20.989  WARN 36364 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-02-09 15:31:23.229  INFO 36364 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-09 15:31:23.279 DEBUG 36364 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-02-09 15:31:23.451 DEBUG 36364 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 5 mappings in 'requestMappingHandlerMapping'
+2020-02-09 15:31:23.624 DEBUG 36364 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2020-02-09 15:31:23.763 DEBUG 36364 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-02-09 15:31:24.754  INFO 36364 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-02-09 15:31:24.914  INFO 36364 --- [main] c.t.t.controller.CustomerControllerTest  : Started CustomerControllerTest in 12.3 seconds (JVM running for 14.624)
+2020-02-09 15:31:25.086  INFO 36364 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2020-02-09 15:31:25.087  INFO 36364 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-02-09 15:31:25.128  INFO 36364 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 41 ms
+2020-02-09 15:31:25.443 DEBUG 36364 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.tek.trp.controller.CustomerController#searchCustomer(Customer)
+2020-02-09 15:31:25.620 DEBUG 36364 --- [main] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json" to [Customer(id=0, customerName=CPP1, customerId=CPP2, lastname=null, middleName=null, branchId=123, bra (truncated)...]
+2020-02-09 15:31:25.652 DEBUG 36364 --- [main] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-02-09 15:31:25.654 DEBUG 36364 --- [main] m.m.a.RequestResponseBodyMethodProcessor : Writing [[Customer(id=0, customerName=CPP1, customerId=CPP2, lastname=null, middleName=null, branchId=123, br (truncated)...]
+2020-02-09 15:31:25.780 DEBUG 36364 --- [SpringContextShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@71e9ebae, started on Sun Feb 09 15:31:13 IST 2020
+2020-02-09 15:31:25.792  INFO 36364 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-02-09 15:31:25.798  INFO 36364 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-02-09 15:31:25.802  INFO 36364 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-02-09 15:31:25.822  INFO 36364 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-02-09 15:33:43.808  INFO 37932 --- [main] c.t.t.controller.CustomerControllerTest  : Starting CustomerControllerTest on HSC-PG01Y4XQ with PID 37932 (started by mrout in D:\TRP-CCP\05022020_customerService\CustomerService)
+2020-02-09 15:33:43.810 DEBUG 37932 --- [main] c.t.t.controller.CustomerControllerTest  : Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2020-02-09 15:33:43.811  INFO 37932 --- [main] c.t.t.controller.CustomerControllerTest  : No active profile set, falling back to default profiles: default
+2020-02-09 15:33:43.865 DEBUG 37932 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@6bc407fd
+2020-02-09 15:33:45.215  INFO 37932 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-02-09 15:33:45.362  INFO 37932 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 128ms. Found 4 JPA repository interfaces.
+2020-02-09 15:33:46.559  INFO 37932 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-09 15:33:47.043  INFO 37932 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-02-09 15:33:47.172  INFO 37932 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-09 15:33:47.236  INFO 37932 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-09 15:33:47.638  INFO 37932 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-02-09 15:33:48.474  INFO 37932 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-02-09 15:33:48.516  INFO 37932 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2020-02-09 15:33:50.412  INFO 37932 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-09 15:33:50.430  INFO 37932 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-02-09 15:33:51.294  WARN 37932 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-02-09 15:33:54.135  INFO 37932 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-09 15:33:54.202 DEBUG 37932 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-02-09 15:33:54.495 DEBUG 37932 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 5 mappings in 'requestMappingHandlerMapping'
+2020-02-09 15:33:54.686 DEBUG 37932 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2020-02-09 15:33:54.809 DEBUG 37932 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-02-09 15:33:56.034  INFO 37932 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-02-09 15:33:56.168  INFO 37932 --- [main] c.t.t.controller.CustomerControllerTest  : Started CustomerControllerTest in 13.149 seconds (JVM running for 15.347)
+2020-02-09 15:33:56.343  INFO 37932 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2020-02-09 15:33:56.344  INFO 37932 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-02-09 15:33:56.382  INFO 37932 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 38 ms
+2020-02-09 15:33:56.671 DEBUG 37932 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.tek.trp.controller.CustomerController#searchCustomer(Customer)
+2020-02-09 15:33:56.850 DEBUG 37932 --- [main] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json" to [Customer(id=0, customerName=CPP1, customerId=CPP2, lastname=null, middleName=null, branchId=123, bra (truncated)...]
+2020-02-09 15:33:56.894 DEBUG 37932 --- [main] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-02-09 15:33:56.895 DEBUG 37932 --- [main] m.m.a.RequestResponseBodyMethodProcessor : Writing [[Customer(id=0, customerName=CPP1, customerId=CPP2, lastname=null, middleName=null, branchId=123, br (truncated)...]
+2020-02-09 15:33:57.033 DEBUG 37932 --- [SpringContextShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@6bc407fd, started on Sun Feb 09 15:33:43 IST 2020
+2020-02-09 15:33:57.040  INFO 37932 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-02-09 15:33:57.046  INFO 37932 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-02-09 15:33:57.049  INFO 37932 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-02-09 15:33:57.071  INFO 37932 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-02-09 15:34:33.929  INFO 19940 --- [main] c.t.t.controller.CustomerControllerTest  : Starting CustomerControllerTest on HSC-PG01Y4XQ with PID 19940 (started by mrout in D:\TRP-CCP\05022020_customerService\CustomerService)
+2020-02-09 15:34:33.931 DEBUG 19940 --- [main] c.t.t.controller.CustomerControllerTest  : Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2020-02-09 15:34:33.933  INFO 19940 --- [main] c.t.t.controller.CustomerControllerTest  : No active profile set, falling back to default profiles: default
+2020-02-09 15:34:34.054 DEBUG 19940 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@13006998
+2020-02-09 15:34:35.451  INFO 19940 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-02-09 15:34:35.607  INFO 19940 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 139ms. Found 4 JPA repository interfaces.
+2020-02-09 15:34:36.784  INFO 19940 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-09 15:34:37.285  INFO 19940 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-02-09 15:34:37.442  INFO 19940 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-09 15:34:37.530  INFO 19940 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-09 15:34:37.942  INFO 19940 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-02-09 15:34:38.798  INFO 19940 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-02-09 15:34:38.848  INFO 19940 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2020-02-09 15:34:40.309  INFO 19940 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-09 15:34:40.322  INFO 19940 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-02-09 15:34:40.812  WARN 19940 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-02-09 15:34:42.984  INFO 19940 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-09 15:34:43.029 DEBUG 19940 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-02-09 15:34:43.192 DEBUG 19940 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 5 mappings in 'requestMappingHandlerMapping'
+2020-02-09 15:34:43.323 DEBUG 19940 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2020-02-09 15:34:43.365 DEBUG 19940 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-02-09 15:34:44.119  INFO 19940 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-02-09 15:34:44.257  INFO 19940 --- [main] c.t.t.controller.CustomerControllerTest  : Started CustomerControllerTest in 10.866 seconds (JVM running for 13.068)
+2020-02-09 15:34:44.410  INFO 19940 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2020-02-09 15:34:44.410  INFO 19940 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-02-09 15:34:44.449  INFO 19940 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 39 ms
+2020-02-09 15:34:53.241 DEBUG 19940 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.tek.trp.controller.CustomerController#searchCustomer(Customer)
+2020-02-09 15:34:53.831 DEBUG 19940 --- [main] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json" to [Customer(id=0, customerName=CPP1, customerId=CPP2, lastname=null, middleName=null, branchId=123, bra (truncated)...]
+2020-02-09 15:34:53.984 DEBUG 19940 --- [main] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-02-09 15:34:53.989 DEBUG 19940 --- [main] m.m.a.RequestResponseBodyMethodProcessor : Writing [[Customer(id=0, customerName=CPP1, customerId=CPP2, lastname=null, middleName=null, branchId=123, br (truncated)...]
+2020-02-09 15:38:17.070  WARN 19940 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m38s170ms845µs296ns).
+2020-02-09 15:38:19.455 DEBUG 19940 --- [SpringContextShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@13006998, started on Sun Feb 09 15:34:34 IST 2020
+2020-02-09 15:38:19.461  INFO 19940 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-02-09 15:38:19.464  INFO 19940 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-02-09 15:38:19.467  INFO 19940 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-02-09 15:38:19.480  INFO 19940 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-02-09 15:39:02.864  INFO 32368 --- [main] c.t.t.controller.CustomerControllerTest  : Starting CustomerControllerTest on HSC-PG01Y4XQ with PID 32368 (started by mrout in D:\TRP-CCP\05022020_customerService\CustomerService)
+2020-02-09 15:39:02.866 DEBUG 32368 --- [main] c.t.t.controller.CustomerControllerTest  : Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2020-02-09 15:39:02.867  INFO 32368 --- [main] c.t.t.controller.CustomerControllerTest  : No active profile set, falling back to default profiles: default
+2020-02-09 15:39:02.931 DEBUG 32368 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@1583741e
+2020-02-09 15:39:04.685  INFO 32368 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-02-09 15:39:04.865  INFO 32368 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 156ms. Found 4 JPA repository interfaces.
+2020-02-09 15:39:06.643  INFO 32368 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-09 15:39:07.144  INFO 32368 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-02-09 15:39:07.284  INFO 32368 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-09 15:39:07.351  INFO 32368 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-09 15:39:07.709  INFO 32368 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-02-09 15:39:08.476  INFO 32368 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-02-09 15:39:08.512  INFO 32368 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2020-02-09 15:39:09.851  INFO 32368 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-09 15:39:09.863  INFO 32368 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-02-09 15:39:10.273  WARN 32368 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-02-09 15:39:12.125  INFO 32368 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-09 15:39:12.156 DEBUG 32368 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-02-09 15:39:12.291 DEBUG 32368 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 5 mappings in 'requestMappingHandlerMapping'
+2020-02-09 15:39:12.384 DEBUG 32368 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2020-02-09 15:39:12.430 DEBUG 32368 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-02-09 15:39:13.085  INFO 32368 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-02-09 15:39:13.193  INFO 32368 --- [main] c.t.t.controller.CustomerControllerTest  : Started CustomerControllerTest in 11.011 seconds (JVM running for 13.443)
+2020-02-09 15:39:13.316  INFO 32368 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2020-02-09 15:39:13.316  INFO 32368 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-02-09 15:39:13.340  INFO 32368 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 23 ms
+2020-02-09 15:39:13.535 DEBUG 32368 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.tek.trp.controller.CustomerController#searchCustomer(Customer)
+2020-02-09 15:39:13.669 DEBUG 32368 --- [main] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json" to [Customer(id=0, customerName=CPP1, customerId=CPP2, lastname=null, middleName=null, branchId=123, bra (truncated)...]
+2020-02-09 15:39:13.691 DEBUG 32368 --- [main] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-02-09 15:39:13.692 DEBUG 32368 --- [main] m.m.a.RequestResponseBodyMethodProcessor : Writing [[Customer(id=0, customerName=CPP1, customerId=CPP2, lastname=null, middleName=null, branchId=123, br (truncated)...]
+2020-02-09 15:39:13.730 DEBUG 32368 --- [SpringContextShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@1583741e, started on Sun Feb 09 15:39:02 IST 2020
+2020-02-09 15:39:13.737  INFO 32368 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-02-09 15:39:13.741  INFO 32368 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-02-09 15:39:13.743  INFO 32368 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-02-09 15:39:13.761  INFO 32368 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-02-09 15:39:50.496  INFO 16592 --- [main] c.t.t.controller.CustomerControllerTest  : Starting CustomerControllerTest on HSC-PG01Y4XQ with PID 16592 (started by mrout in D:\TRP-CCP\05022020_customerService\CustomerService)
+2020-02-09 15:39:50.500 DEBUG 16592 --- [main] c.t.t.controller.CustomerControllerTest  : Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2020-02-09 15:39:50.502  INFO 16592 --- [main] c.t.t.controller.CustomerControllerTest  : No active profile set, falling back to default profiles: default
+2020-02-09 15:39:50.655 DEBUG 16592 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@13006998
+2020-02-09 15:39:52.403  INFO 16592 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-02-09 15:39:52.593  INFO 16592 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 168ms. Found 4 JPA repository interfaces.
+2020-02-09 15:39:54.316  INFO 16592 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-09 15:39:54.905  INFO 16592 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-02-09 15:39:55.049  INFO 16592 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-09 15:39:55.135  INFO 16592 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-09 15:39:55.655  INFO 16592 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-02-09 15:39:57.289  INFO 16592 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-02-09 15:39:57.341  INFO 16592 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2020-02-09 15:39:59.255  INFO 16592 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-09 15:39:59.274  INFO 16592 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-02-09 15:40:00.024  WARN 16592 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-02-09 15:40:03.169  INFO 16592 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-09 15:40:03.232 DEBUG 16592 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-02-09 15:40:03.444 DEBUG 16592 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 5 mappings in 'requestMappingHandlerMapping'
+2020-02-09 15:40:03.632 DEBUG 16592 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2020-02-09 15:40:03.682 DEBUG 16592 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-02-09 15:40:04.903  INFO 16592 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-02-09 15:40:05.107  INFO 16592 --- [main] c.t.t.controller.CustomerControllerTest  : Started CustomerControllerTest in 15.367 seconds (JVM running for 17.659)
+2020-02-09 15:40:05.362  INFO 16592 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2020-02-09 15:40:05.362  INFO 16592 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-02-09 15:40:05.437  INFO 16592 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 74 ms
+2020-02-09 15:40:12.300 DEBUG 16592 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.tek.trp.controller.CustomerController#searchCustomer(Customer)
+2020-02-09 15:40:12.716 DEBUG 16592 --- [main] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json" to [Customer(id=0, customerName=CPP1, customerId=CPP2, lastname=null, middleName=null, branchId=123, bra (truncated)...]
+2020-02-09 15:40:12.794 DEBUG 16592 --- [main] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-02-09 15:40:12.798 DEBUG 16592 --- [main] m.m.a.RequestResponseBodyMethodProcessor : Writing [[Customer(id=0, customerName=CPP1, customerId=CPP2, lastname=null, middleName=null, branchId=123, br (truncated)...]
+2020-02-09 15:40:35.305 DEBUG 16592 --- [SpringContextShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@13006998, started on Sun Feb 09 15:39:50 IST 2020
+2020-02-09 15:40:35.311  INFO 16592 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-02-09 15:40:35.315  INFO 16592 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-02-09 15:40:35.317  INFO 16592 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-02-09 15:40:35.327  INFO 16592 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-02-09 15:41:07.266  INFO 37232 --- [main] c.t.t.controller.CustomerControllerTest  : Starting CustomerControllerTest on HSC-PG01Y4XQ with PID 37232 (started by mrout in D:\TRP-CCP\05022020_customerService\CustomerService)
+2020-02-09 15:41:07.269 DEBUG 37232 --- [main] c.t.t.controller.CustomerControllerTest  : Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2020-02-09 15:41:07.271  INFO 37232 --- [main] c.t.t.controller.CustomerControllerTest  : No active profile set, falling back to default profiles: default
+2020-02-09 15:41:07.423 DEBUG 37232 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@106faf11
+2020-02-09 15:41:09.294  INFO 37232 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-02-09 15:41:09.477  INFO 37232 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 161ms. Found 4 JPA repository interfaces.
+2020-02-09 15:41:10.945  INFO 37232 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-09 15:41:11.498  INFO 37232 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-02-09 15:41:11.654  INFO 37232 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-09 15:41:11.741  INFO 37232 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-09 15:41:12.186  INFO 37232 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-02-09 15:41:13.052  INFO 37232 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-02-09 15:41:13.096  INFO 37232 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2020-02-09 15:41:14.746  INFO 37232 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-09 15:41:14.759  INFO 37232 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-02-09 15:41:15.308  WARN 37232 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-02-09 15:41:17.937  INFO 37232 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-09 15:41:17.992 DEBUG 37232 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-02-09 15:41:18.181 DEBUG 37232 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 5 mappings in 'requestMappingHandlerMapping'
+2020-02-09 15:41:18.326 DEBUG 37232 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2020-02-09 15:41:18.367 DEBUG 37232 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-02-09 15:41:19.474  INFO 37232 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-02-09 15:41:19.635  INFO 37232 --- [main] c.t.t.controller.CustomerControllerTest  : Started CustomerControllerTest in 13.229 seconds (JVM running for 16.691)
+2020-02-09 15:41:19.815  INFO 37232 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2020-02-09 15:41:19.815  INFO 37232 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-02-09 15:41:19.851  INFO 37232 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 36 ms
+2020-02-09 15:41:27.091 DEBUG 37232 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.tek.trp.controller.CustomerController#searchCustomer(Customer)
+2020-02-09 15:41:27.545 DEBUG 37232 --- [main] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json" to [Customer(id=0, customerName=CPP1, customerId=CPP2, lastname=null, middleName=null, branchId=123, bra (truncated)...]
+2020-02-09 15:41:27.615 DEBUG 37232 --- [main] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-02-09 15:41:27.619 DEBUG 37232 --- [main] m.m.a.RequestResponseBodyMethodProcessor : Writing [[Customer(id=0, customerName=CPP1, customerId=CPP2, lastname=null, middleName=null, branchId=123, br (truncated)...]
+2020-02-09 15:42:12.827  WARN 37232 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=59s673ms284µs855ns).
+2020-02-09 15:42:12.843 DEBUG 37232 --- [SpringContextShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@106faf11, started on Sun Feb 09 15:41:07 IST 2020
+2020-02-09 15:42:12.845  INFO 37232 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-02-09 15:42:12.849  INFO 37232 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-02-09 15:42:12.851  INFO 37232 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-02-09 15:42:12.864  INFO 37232 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-02-09 15:43:09.843  INFO 36992 --- [main] c.t.t.controller.CustomerControllerTest  : Starting CustomerControllerTest on HSC-PG01Y4XQ with PID 36992 (started by mrout in D:\TRP-CCP\05022020_customerService\CustomerService)
+2020-02-09 15:43:09.845 DEBUG 36992 --- [main] c.t.t.controller.CustomerControllerTest  : Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2020-02-09 15:43:09.846  INFO 36992 --- [main] c.t.t.controller.CustomerControllerTest  : No active profile set, falling back to default profiles: default
+2020-02-09 15:43:09.962 DEBUG 36992 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@106faf11
+2020-02-09 15:43:11.522  INFO 36992 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-02-09 15:43:11.692  INFO 36992 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 148ms. Found 4 JPA repository interfaces.
+2020-02-09 15:43:12.960  INFO 36992 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-09 15:43:13.504  INFO 36992 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-02-09 15:43:13.651  INFO 36992 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-09 15:43:13.741  INFO 36992 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-09 15:43:14.160  INFO 36992 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-02-09 15:43:15.072  INFO 36992 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-02-09 15:43:15.126  INFO 36992 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2020-02-09 15:43:16.591  INFO 36992 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-09 15:43:16.605  INFO 36992 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-02-09 15:43:17.124  WARN 36992 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-02-09 15:43:19.531  INFO 36992 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-09 15:43:19.580 DEBUG 36992 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-02-09 15:43:19.759 DEBUG 36992 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 5 mappings in 'requestMappingHandlerMapping'
+2020-02-09 15:43:19.903 DEBUG 36992 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2020-02-09 15:43:19.950 DEBUG 36992 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-02-09 15:43:20.782  INFO 36992 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-02-09 15:43:20.929  INFO 36992 --- [main] c.t.t.controller.CustomerControllerTest  : Started CustomerControllerTest in 11.729 seconds (JVM running for 15.272)
+2020-02-09 15:43:21.079  INFO 36992 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2020-02-09 15:43:21.080  INFO 36992 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-02-09 15:43:21.115  INFO 36992 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 35 ms
+2020-02-09 15:43:26.375 DEBUG 36992 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.tek.trp.controller.CustomerController#searchCustomer(Customer)
+2020-02-09 15:43:26.801 DEBUG 36992 --- [main] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json" to [Customer(id=0, customerName=CPP1, customerId=CPP2, lastname=null, middleName=null, branchId=123, bra (truncated)...]
+2020-02-09 15:43:26.882 DEBUG 36992 --- [main] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-02-09 15:43:26.886 DEBUG 36992 --- [main] m.m.a.RequestResponseBodyMethodProcessor : Writing [[Customer(id=0, customerName=CPP1, customerId=CPP2, lastname=null, middleName=null, branchId=123, br (truncated)...]
+2020-02-09 15:43:35.571 DEBUG 36992 --- [SpringContextShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@106faf11, started on Sun Feb 09 15:43:09 IST 2020
+2020-02-09 15:43:35.576  INFO 36992 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-02-09 15:43:35.578  INFO 36992 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-02-09 15:43:35.581  INFO 36992 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-02-09 15:43:35.596  INFO 36992 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-02-09 15:44:38.377  INFO 38716 --- [main] c.t.t.controller.CustomerControllerTest  : Starting CustomerControllerTest on HSC-PG01Y4XQ with PID 38716 (started by mrout in D:\TRP-CCP\05022020_customerService\CustomerService)
+2020-02-09 15:44:38.379 DEBUG 38716 --- [main] c.t.t.controller.CustomerControllerTest  : Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2020-02-09 15:44:38.380  INFO 38716 --- [main] c.t.t.controller.CustomerControllerTest  : No active profile set, falling back to default profiles: default
+2020-02-09 15:44:38.508 DEBUG 38716 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@13006998
+2020-02-09 15:44:39.899  INFO 38716 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-02-09 15:44:40.070  INFO 38716 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 151ms. Found 4 JPA repository interfaces.
+2020-02-09 15:44:41.349  INFO 38716 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-09 15:44:41.873  INFO 38716 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-02-09 15:44:42.004  INFO 38716 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-09 15:44:42.068  INFO 38716 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-09 15:44:42.497  INFO 38716 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-02-09 15:44:43.377  INFO 38716 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-02-09 15:44:43.424  INFO 38716 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2020-02-09 15:44:44.873  INFO 38716 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-09 15:44:44.884  INFO 38716 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-02-09 15:44:45.422  WARN 38716 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-02-09 15:44:47.841  INFO 38716 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-09 15:44:47.895 DEBUG 38716 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-02-09 15:44:48.073 DEBUG 38716 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 5 mappings in 'requestMappingHandlerMapping'
+2020-02-09 15:44:48.207 DEBUG 38716 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2020-02-09 15:44:48.251 DEBUG 38716 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-02-09 15:44:49.045  INFO 38716 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-02-09 15:44:49.173  INFO 38716 --- [main] c.t.t.controller.CustomerControllerTest  : Started CustomerControllerTest in 11.41 seconds (JVM running for 13.733)
+2020-02-09 15:44:49.312  INFO 38716 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2020-02-09 15:44:49.313  INFO 38716 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-02-09 15:44:49.344  INFO 38716 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 31 ms
+2020-02-09 15:44:55.019 DEBUG 38716 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.tek.trp.controller.CustomerController#searchCustomer(Customer)
+2020-02-09 15:44:55.613 DEBUG 38716 --- [main] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json" to [Customer(id=0, customerName=CPP1, customerId=CPP2, lastname=null, middleName=null, branchId=123, bra (truncated)...]
+2020-02-09 15:44:55.714 DEBUG 38716 --- [main] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-02-09 15:44:55.718 DEBUG 38716 --- [main] m.m.a.RequestResponseBodyMethodProcessor : Writing [[Customer(id=0, customerName=CPP1, customerId=CPP2, lastname=null, middleName=null, branchId=123, br (truncated)...]
+2020-02-09 15:45:03.571 DEBUG 38716 --- [SpringContextShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@13006998, started on Sun Feb 09 15:44:38 IST 2020
+2020-02-09 15:45:03.577  INFO 38716 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-02-09 15:45:03.582  INFO 38716 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-02-09 15:45:03.585  INFO 38716 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-02-09 15:45:03.601  INFO 38716 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-02-09 15:45:15.511  INFO 33132 --- [main] c.t.t.controller.CustomerControllerTest  : Starting CustomerControllerTest on HSC-PG01Y4XQ with PID 33132 (started by mrout in D:\TRP-CCP\05022020_customerService\CustomerService)
+2020-02-09 15:45:15.513 DEBUG 33132 --- [main] c.t.t.controller.CustomerControllerTest  : Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2020-02-09 15:45:15.514  INFO 33132 --- [main] c.t.t.controller.CustomerControllerTest  : No active profile set, falling back to default profiles: default
+2020-02-09 15:45:15.587 DEBUG 33132 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@1583741e
+2020-02-09 15:45:16.959  INFO 33132 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-02-09 15:45:17.097  INFO 33132 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 119ms. Found 4 JPA repository interfaces.
+2020-02-09 15:45:18.391  INFO 33132 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-09 15:45:18.824  INFO 33132 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-02-09 15:45:18.961  INFO 33132 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-09 15:45:19.044  INFO 33132 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-09 15:45:19.483  INFO 33132 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-02-09 15:45:20.414  INFO 33132 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-02-09 15:45:20.480  INFO 33132 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2020-02-09 15:45:22.218  INFO 33132 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-09 15:45:22.229  INFO 33132 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-02-09 15:45:22.787  WARN 33132 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-02-09 15:45:25.409  INFO 33132 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-09 15:45:25.465 DEBUG 33132 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-02-09 15:45:25.650 DEBUG 33132 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 5 mappings in 'requestMappingHandlerMapping'
+2020-02-09 15:45:25.770 DEBUG 33132 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2020-02-09 15:45:25.802 DEBUG 33132 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-02-09 15:45:26.542  INFO 33132 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-02-09 15:45:26.660  INFO 33132 --- [main] c.t.t.controller.CustomerControllerTest  : Started CustomerControllerTest in 11.9 seconds (JVM running for 14.195)
+2020-02-09 15:45:26.790  INFO 33132 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2020-02-09 15:45:26.790  INFO 33132 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-02-09 15:45:26.809  INFO 33132 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 19 ms
+2020-02-09 15:45:27.022 DEBUG 33132 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.tek.trp.controller.CustomerController#searchCustomer(Customer)
+2020-02-09 15:45:27.158 DEBUG 33132 --- [main] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json" to [Customer(id=0, customerName=CPP1, customerId=CPP2, lastname=null, middleName=null, branchId=123, bra (truncated)...]
+2020-02-09 15:45:27.187 DEBUG 33132 --- [main] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-02-09 15:45:27.188 DEBUG 33132 --- [main] m.m.a.RequestResponseBodyMethodProcessor : Writing [[Customer(id=0, customerName=CPP1, customerId=CPP2, lastname=null, middleName=null, branchId=123, br (truncated)...]
+2020-02-09 15:45:27.251 DEBUG 33132 --- [SpringContextShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@1583741e, started on Sun Feb 09 15:45:15 IST 2020
+2020-02-09 15:45:27.259  INFO 33132 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-02-09 15:45:27.266  INFO 33132 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-02-09 15:45:27.269  INFO 33132 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-02-09 15:45:27.280  INFO 33132 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-02-09 15:50:13.521  INFO 26100 --- [main] c.t.t.controller.CustomerControllerTest  : Starting CustomerControllerTest on HSC-PG01Y4XQ with PID 26100 (started by mrout in D:\TRP-CCP\05022020_customerService\CustomerService)
+2020-02-09 15:50:13.523 DEBUG 26100 --- [main] c.t.t.controller.CustomerControllerTest  : Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2020-02-09 15:50:13.525  INFO 26100 --- [main] c.t.t.controller.CustomerControllerTest  : No active profile set, falling back to default profiles: default
+2020-02-09 15:50:13.636 DEBUG 26100 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@71e9ebae
+2020-02-09 15:50:14.882  INFO 26100 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-02-09 15:50:14.997  INFO 26100 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 102ms. Found 4 JPA repository interfaces.
+2020-02-09 15:50:16.004  INFO 26100 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-09 15:50:16.438  INFO 26100 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-02-09 15:50:16.559  INFO 26100 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-09 15:50:16.619  INFO 26100 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-09 15:50:16.965  INFO 26100 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-02-09 15:50:17.689  INFO 26100 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-02-09 15:50:17.725  INFO 26100 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2020-02-09 15:50:19.012  INFO 26100 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-09 15:50:19.021  INFO 26100 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-02-09 15:50:19.397  WARN 26100 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-02-09 15:50:21.249  INFO 26100 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-09 15:50:21.289 DEBUG 26100 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-02-09 15:50:21.442 DEBUG 26100 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 5 mappings in 'requestMappingHandlerMapping'
+2020-02-09 15:50:21.554 DEBUG 26100 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2020-02-09 15:50:21.587 DEBUG 26100 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-02-09 15:50:22.197  INFO 26100 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-02-09 15:50:22.290  INFO 26100 --- [main] c.t.t.controller.CustomerControllerTest  : Started CustomerControllerTest in 9.368 seconds (JVM running for 11.301)
+2020-02-09 15:50:22.397  INFO 26100 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2020-02-09 15:50:22.397  INFO 26100 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-02-09 15:50:22.424  INFO 26100 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 27 ms
+2020-02-09 15:50:22.602 DEBUG 26100 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.tek.trp.controller.CustomerController#searchCustomer(Customer)
+2020-02-09 15:50:22.712 DEBUG 26100 --- [main] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json" to [Customer(id=0, customerName=CPP1, customerId=CPP2, lastname=null, middleName=null, branchId=123, bra (truncated)...]
+2020-02-09 15:50:22.732 DEBUG 26100 --- [main] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-02-09 15:50:22.733 DEBUG 26100 --- [main] m.m.a.RequestResponseBodyMethodProcessor : Writing [[Customer(id=0, customerName=CPP1, customerId=CPP2, lastname=null, middleName=null, branchId=123, br (truncated)...]
+2020-02-09 15:50:22.791 DEBUG 26100 --- [SpringContextShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@71e9ebae, started on Sun Feb 09 15:50:13 IST 2020
+2020-02-09 15:50:22.796  INFO 26100 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-02-09 15:50:22.801  INFO 26100 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-02-09 15:50:22.804  INFO 26100 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-02-09 15:50:22.819  INFO 26100 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-02-09 15:53:08.565  INFO 32696 --- [main] c.t.t.controller.CustomerControllerTest  : Starting CustomerControllerTest on HSC-PG01Y4XQ with PID 32696 (started by mrout in D:\TRP-CCP\05022020_customerService\CustomerService)
+2020-02-09 15:53:08.567 DEBUG 32696 --- [main] c.t.t.controller.CustomerControllerTest  : Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2020-02-09 15:53:08.569  INFO 32696 --- [main] c.t.t.controller.CustomerControllerTest  : No active profile set, falling back to default profiles: default
+2020-02-09 15:53:08.693 DEBUG 32696 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@291f18
+2020-02-09 15:53:09.976  INFO 32696 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-02-09 15:53:10.113  INFO 32696 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 119ms. Found 4 JPA repository interfaces.
+2020-02-09 15:53:11.039  INFO 32696 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-09 15:53:11.485  INFO 32696 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-02-09 15:53:11.603  INFO 32696 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-09 15:53:11.663  INFO 32696 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-09 15:53:12.028  INFO 32696 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-02-09 15:53:12.731  INFO 32696 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-02-09 15:53:12.771  INFO 32696 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2020-02-09 15:53:14.090  INFO 32696 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-09 15:53:14.099  INFO 32696 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-02-09 15:53:14.496  WARN 32696 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-02-09 15:53:16.362  INFO 32696 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-09 15:53:16.401 DEBUG 32696 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-02-09 15:53:16.544 DEBUG 32696 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 5 mappings in 'requestMappingHandlerMapping'
+2020-02-09 15:53:16.639 DEBUG 32696 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2020-02-09 15:53:16.674 DEBUG 32696 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-02-09 15:53:17.265  INFO 32696 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-02-09 15:53:17.385  INFO 32696 --- [main] c.t.t.controller.CustomerControllerTest  : Started CustomerControllerTest in 9.433 seconds (JVM running for 11.117)
+2020-02-09 15:53:17.507  INFO 32696 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2020-02-09 15:53:17.507  INFO 32696 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-02-09 15:53:17.531  INFO 32696 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 23 ms
+2020-02-09 15:53:17.735 DEBUG 32696 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.tek.trp.controller.CustomerController#searchCustomer(Customer)
+2020-02-09 15:53:17.875 DEBUG 32696 --- [main] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json" to [Customer(id=0, customerName=CPP1, customerId=CPP2, lastname=null, middleName=null, branchId=123, bra (truncated)...]
+2020-02-09 15:53:17.900 DEBUG 32696 --- [main] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-02-09 15:53:17.901 DEBUG 32696 --- [main] m.m.a.RequestResponseBodyMethodProcessor : Writing [[Customer(id=0, customerName=CPP1, customerId=CPP2, lastname=null, middleName=null, branchId=123, br (truncated)...]
+2020-02-09 15:53:17.957 DEBUG 32696 --- [SpringContextShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@291f18, started on Sun Feb 09 15:53:08 IST 2020
+2020-02-09 15:53:17.962  INFO 32696 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-02-09 15:53:17.967  INFO 32696 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-02-09 15:53:17.969  INFO 32696 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-02-09 15:53:17.988  INFO 32696 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-02-09 15:54:31.744  INFO 13764 --- [main] c.t.t.controller.CustomerControllerTest  : Starting CustomerControllerTest on HSC-PG01Y4XQ with PID 13764 (started by mrout in D:\TRP-CCP\05022020_customerService\CustomerService)
+2020-02-09 15:54:31.747 DEBUG 13764 --- [main] c.t.t.controller.CustomerControllerTest  : Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2020-02-09 15:54:31.748  INFO 13764 --- [main] c.t.t.controller.CustomerControllerTest  : No active profile set, falling back to default profiles: default
+2020-02-09 15:54:31.856 DEBUG 13764 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@6bc407fd
+2020-02-09 15:54:33.472  INFO 13764 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-02-09 15:54:33.681  INFO 13764 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 186ms. Found 4 JPA repository interfaces.
+2020-02-09 15:54:35.616  INFO 13764 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-09 15:54:36.387  INFO 13764 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-02-09 15:54:36.558  INFO 13764 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.10.Final}
+2020-02-09 15:54:36.649  INFO 13764 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-09 15:54:37.125  INFO 13764 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-02-09 15:54:37.975  INFO 13764 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-02-09 15:54:38.013  INFO 13764 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2020-02-09 15:54:39.271  INFO 13764 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-09 15:54:39.279  INFO 13764 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-02-09 15:54:39.671  WARN 13764 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-02-09 15:54:41.599  INFO 13764 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-09 15:54:41.645 DEBUG 13764 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-02-09 15:54:41.871 DEBUG 13764 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 5 mappings in 'requestMappingHandlerMapping'
+2020-02-09 15:54:42.055 DEBUG 13764 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2020-02-09 15:54:42.132 DEBUG 13764 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-02-09 15:54:43.064  INFO 13764 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-02-09 15:54:43.204  INFO 13764 --- [main] c.t.t.controller.CustomerControllerTest  : Started CustomerControllerTest in 12.132 seconds (JVM running for 14.095)
+2020-02-09 15:54:43.357  INFO 13764 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2020-02-09 15:54:43.358  INFO 13764 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-02-09 15:54:43.404  INFO 13764 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 46 ms
+2020-02-09 15:54:43.686 DEBUG 13764 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.tek.trp.controller.CustomerController#searchCustomer(Customer)
+2020-02-09 15:54:43.925 DEBUG 13764 --- [main] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json" to [Customer(id=0, customerName=CPP1, customerId=CPP2, lastname=null, middleName=null, branchId=123, bra (truncated)...]
+2020-02-09 15:54:43.960 DEBUG 13764 --- [main] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-02-09 15:54:43.962 DEBUG 13764 --- [main] m.m.a.RequestResponseBodyMethodProcessor : Writing [[Customer(id=0, customerName=CPP1, customerId=CPP2, lastname=null, middleName=null, branchId=123, br (truncated)...]
+2020-02-09 15:54:44.033 DEBUG 13764 --- [SpringContextShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@6bc407fd, started on Sun Feb 09 15:54:31 IST 2020
+2020-02-09 15:54:44.039  INFO 13764 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-02-09 15:54:44.046  INFO 13764 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-02-09 15:54:44.049  INFO 13764 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-02-09 15:54:44.068  INFO 13764 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
