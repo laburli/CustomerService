@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
+import com.tek.trp.exception.AlreadyDeactivateAccountException;
 import com.tek.trp.exception.CustomerCreationException;
 import com.tek.trp.exception.CustomerNotFoundException;
 import com.tek.trp.service.CustomerService;
@@ -107,5 +108,41 @@ public class CustomerServiceImpl implements CustomerService {
 			throw new CustomerNotFoundException("There is a problem to find a customer,Please try after sometime");
 		}
 		return listCustomer;
+	}
+	@Override
+	public void softDeleteCustomer(String id) throws CustomerNotFoundException, AlreadyDeactivateAccountException {
+
+		Optional<Customer> customer = customerRepository.findByCustomerId(id);
+
+		if (!customer.isPresent()) {
+			throw new CustomerNotFoundException( "There is no customer with this id :" + id);
+			//throw a new No Customer Found Exception method;
+		}
+		else {
+
+			Customer cust = customer.get();
+			if (cust.getCustomerStatus().toLowerCase().trim().equals( "inactive" )) {
+				throw new AlreadyDeactivateAccountException( "This account is already inactive" );
+				//throw a new Already Deactivate Account Exception method;
+			} else {
+				cust.setCustomerStatus( "Inactive" );
+				customerRepository.save( cust );
+			}
+		}
+
+	}
+
+
+	@Override
+	public void deleteCustomer(String cust_id) throws CustomerNotFoundException {
+
+		String id = cust_id;
+		Customer customer = customerRepository.findByCustomerId(id).get();
+		if (customer == null) {
+			throw new CustomerNotFoundException( "There is no customer with this id :" );
+			//throw a new No Customer Found Exception method;
+		}
+		else
+			customerRepository.delete( customerRepository.findByCustomerId(id).get());
 	}
 }
