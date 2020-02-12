@@ -3,8 +3,11 @@
  */
 package com.tek.trp.controller;
 
+import com.tek.trp.exception.AlreadyDeactivateAccountException;
 import com.tek.trp.exception.CustomerNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.tek.trp.model.Customer;
@@ -43,6 +46,23 @@ public class CustomerController {
 	@PostMapping(value = "/create-customer")
 	public Customer createCustomer(@Valid @RequestBody Customer customer){
 		return customerService.saveCustomer(customer);
+	}
+
+	@GetMapping("/softdelete")
+	public HttpStatus mockCall(){
+		return HttpStatus.OK;
+	}
+
+	@PutMapping(value = "/softdelete/{id}")
+	public ResponseEntity<Object> softdeleteCustomer (@PathVariable int id) throws CustomerNotFoundException, AlreadyDeactivateAccountException {
+		customerService.softDeleteCustomer(id);
+		return new ResponseEntity<>( HttpStatus.OK );
+
+	}
+
+	@DeleteMapping(value = "/{id}")
+	public void deleteCustomer
+			(@PathVariable int id) throws CustomerNotFoundException { customerService.deleteCustomer(id);
 	}
 
 

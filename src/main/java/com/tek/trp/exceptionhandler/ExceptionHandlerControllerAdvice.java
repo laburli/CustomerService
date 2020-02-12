@@ -2,6 +2,7 @@ package com.tek.trp.exceptionhandler;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.tek.trp.exception.AlreadyDeactivateAccountException;
 import com.tek.trp.exception.CustomerCreationException;
 import com.tek.trp.exception.CustomerNotFoundException;
 import com.tek.trp.exception.ExceptionResponse;
@@ -32,5 +33,17 @@ public class ExceptionHandlerControllerAdvice {
     @ExceptionHandler(CustomerCreationException.class)
     public ResponseEntity<Object> exception(CustomerCreationException e) {
         return new ResponseEntity<>("Customer creation failed because of missing information", HttpStatus.PARTIAL_CONTENT);
+    }
+    @ControllerAdvice
+    public static class CustomerExceptionHandler
+    {
+        @ExceptionHandler(value = CustomerNotFoundException.class)
+        public static ResponseEntity<Object> exceptionCNFE(CustomerNotFoundException exception) {
+            return new ResponseEntity<>(exception.getMessage(), HttpStatus.NOT_FOUND);
+        }
+        @ExceptionHandler(value = AlreadyDeactivateAccountException.class)
+        public static ResponseEntity<Object> exceptionADAE(AlreadyDeactivateAccountException exception) {
+            return new ResponseEntity<>(exception.getMessage(), HttpStatus.NOT_FOUND);
+        }
     }
 }
