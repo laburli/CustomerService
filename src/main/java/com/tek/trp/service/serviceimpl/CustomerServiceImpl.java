@@ -110,9 +110,9 @@ public class CustomerServiceImpl implements CustomerService {
 		return listCustomer;
 	}
 	@Override
-	public void softDeleteCustomer(int id) throws CustomerNotFoundException, AlreadyDeactivateAccountException {
+	public void softDeleteCustomer(String id) throws CustomerNotFoundException, AlreadyDeactivateAccountException {
 
-		Optional<Customer> customer = customerRepository.findById(id);
+		Optional<Customer> customer = customerRepository.findByCustomerId(id);
 
 		if (!customer.isPresent()) {
 			throw new CustomerNotFoundException( "There is no customer with this id :" + id);
@@ -134,15 +134,15 @@ public class CustomerServiceImpl implements CustomerService {
 
 
 	@Override
-	public void deleteCustomer(int cust_id) throws CustomerNotFoundException {
+	public void deleteCustomer(String cust_id) throws CustomerNotFoundException {
 
-		int id = 0;
-		Customer customer = customerRepository.findById(id ).get();
+		String id = cust_id;
+		Customer customer = customerRepository.findByCustomerId(id).get();
 		if (customer == null) {
 			throw new CustomerNotFoundException( "There is no customer with this id :" );
 			//throw a new No Customer Found Exception method;
 		}
 		else
-			customerRepository.delete( customerRepository.findById(id).get());
+			customerRepository.delete( customerRepository.findByCustomerId(id).get());
 	}
 }

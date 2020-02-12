@@ -25,7 +25,7 @@ public interface CustomerService {
 	List<Customer> getCustomers();
 
 	public List<Customer> searchCustomer(Customer c) throws CustomerNotFoundException;
-	public void softDeleteCustomer(int cust_id) throws CustomerNotFoundException, AlreadyDeactivateAccountException;
-	void deleteCustomer (int cust_id) throws CustomerNotFoundException;
+	public void softDeleteCustomer(String cust_id) throws CustomerNotFoundException, AlreadyDeactivateAccountException;
+	void deleteCustomer (String cust_id) throws CustomerNotFoundException;
 
 }

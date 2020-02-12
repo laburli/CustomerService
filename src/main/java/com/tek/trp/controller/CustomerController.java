@@ -54,7 +54,7 @@ public class CustomerController {
 	}
 
 	@PutMapping(value = "/softdelete/{id}")
-	public ResponseEntity<Object> softdeleteCustomer (@PathVariable int id) throws CustomerNotFoundException, AlreadyDeactivateAccountException {
+	public ResponseEntity<Object> softdeleteCustomer (@PathVariable String id) throws CustomerNotFoundException, AlreadyDeactivateAccountException {
 		customerService.softDeleteCustomer(id);
 		return new ResponseEntity<>( HttpStatus.OK );
 
@@ -62,7 +62,7 @@ public class CustomerController {
 
 	@DeleteMapping(value = "/{id}")
 	public void deleteCustomer
-			(@PathVariable int id) throws CustomerNotFoundException { customerService.deleteCustomer(id);
+			(@PathVariable String id) throws CustomerNotFoundException { customerService.deleteCustomer(id);
 	}
 
 
