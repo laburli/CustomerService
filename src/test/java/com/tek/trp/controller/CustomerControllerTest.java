@@ -1,7 +1,9 @@
 package com.tek.trp.controller;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.when;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
@@ -248,6 +250,29 @@ public class CustomerControllerTest {
 		when(customerService.updateCustomer(cdtoList)).thenReturn("Customer data Updated");
 
 	}
+	
+	@Test
+	public void CustomerShouldSoftDeleteThenReturnMessageFromService() throws Exception {
+
+		String customerId="62167833";
+
+	
+		this.mockMvc.perform(put("/api/softdelete/62167833")).andDo(print()).andExpect(status().isOk());
+		doNothing().when(customerService).softDeleteCustomer(customerId);
+
+	}
+	
+	
+	@Test
+	public void CustomerShouldDeleteThenReturnMessageFromService() throws Exception {
+
+		String customerId="62167833";
+
+	
+		this.mockMvc.perform(delete("/api/62167833")).andDo(print()).andExpect(status().isOk());
+		doNothing().when(customerService).deleteCustomer(customerId);
+
+	}
 
 	@Test
 	public void CustomerShouldSaveThenReturnMessageFromService() throws Exception {
@@ -286,6 +311,16 @@ System.out.println(input.toString());
 		 */
 	}
 
+	@Test
+	public void getCustomerdetailsThenReturnMessageFromService() throws Exception {
+
+		byte[] input = toJson(customer);
+System.out.println(input.toString());
+		this.mockMvc.perform(get("/api/viewAll-Customers")).andDo(print()).andExpect(status().isOk());
+		when(customerService.getCustomers()).thenReturn(Arrays.asList(customer));
+
+	}
+	
 	@Test
     public void verifySearchCustomer() throws Exception {
         Customer customer = getCustomerForSearch();

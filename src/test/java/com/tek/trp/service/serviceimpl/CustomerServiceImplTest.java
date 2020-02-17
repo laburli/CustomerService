@@ -5,6 +5,8 @@ package com.tek.trp.service.serviceimpl;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import java.time.LocalDateTime;
@@ -257,6 +259,34 @@ public class CustomerServiceImplTest {
 		String result = customerService.updateCustomer(cdtoList);
 		assertEquals("Customer data Updated", result);
 	}
+	
+	
+	@Test
+	public void customerShouldSoftDeleteThenReturnMessageFromService() throws Exception {
+
+		String customerId="62167833";
+
+		when(customerRepository.findByCustomerId(Mockito.anyString())).thenReturn(customer);
+
+		when(customerRepository.save(Mockito.any(Customer.class))).thenReturn(customer);
+
+		 customerService.softDeleteCustomer(customerId);
+		
+	}
+	
+	@Test
+	public void customerShouldDeleteThenReturnMessageFromService() throws Exception {
+
+		String customerId="62167833";
+
+		when(customerRepository.findByCustomerId(Mockito.anyString())).thenReturn(customer);
+
+	
+
+		 customerService.deleteCustomer(customerId);
+		 verify(customerRepository, times(1)).delete(customer);
+		
+	}
 
 	@Test
 	public void PhoneNumberShouldUpdateThenReturnMessageFromService() throws Exception {
@@ -277,6 +307,16 @@ public class CustomerServiceImplTest {
 		assertEquals("Updated Successfully", result);
 	}
 
+	@Test
+	public void getCustomers() throws TRPException {
+		//Customer customer = getCustomerForId();
+		// Customer optionalCustomer = Optional.of(customer);
+		Mockito.when(customerRepository.findAll()).thenReturn(Arrays.asList(customer));
+		List<Customer> cust = customerService.getCustomers();
+		assertEquals(cust, Arrays.asList(customer));
+	}
+
+	
 	@Test
 	public void searchCustomerTestByIdAndName() throws TRPException {
 		Customer customer = getCustomerByIdAndName();
