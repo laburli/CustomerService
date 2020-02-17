@@ -80,10 +80,7 @@ public class CustomerController {
 		return customerService.searchCustomer(searchCustomer);
 	}
 
-	@GetMapping("/softdelete")
-	public HttpStatus mockCall() {
-		return HttpStatus.OK;
-	}
+	
 
 	@PutMapping(value = "/softdelete/{id}")
 	public ResponseEntity<Object> softdeleteCustomer(@PathVariable String id) {
