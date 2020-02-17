@@ -1,5 +1,5 @@
 /**
- * This repository to access predefined  and implement custom queries of Email table.
+ * 
  */
 package com.tek.trp.repository;
 

@@ -18,7 +18,7 @@ import org.springframework.context.annotation.Configuration;
  * @author raadari
  *
  */
-//@Configuration
+@Configuration
 @ConfigurationProperties("spring.datasource")
 public class DBConfiguration {
 	

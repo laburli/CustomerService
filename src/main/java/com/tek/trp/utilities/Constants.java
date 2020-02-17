@@ -1,5 +1,5 @@
 /**
- * To define common constants in application
+ * 
  */
 package com.tek.trp.utilities;
 

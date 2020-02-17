@@ -3,12 +3,16 @@
  */
 package com.tek.trp.service;
 
-import com.tek.trp.exception.CustomerNotFoundException;
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
-import com.tek.trp.model.Customer;
+import com.tek.trp.dto.AddressDTO;
+import com.tek.trp.dto.CustomerDTO;
+import com.tek.trp.dto.EmailDTO;
+import com.tek.trp.dto.PhoneNumberDTO;
 
-import java.util.List;
+import com.tek.trp.model.Customer;
 
 /**
  * @author raadari
@@ -17,12 +21,24 @@ import java.util.List;
 @Service
 public interface CustomerService {
 
+	Customer saveCustomer();
+
 	Customer saveCustomer(Customer c);
 
-	Customer updateCustomer(Customer c);
+	
+
+	String updateAddress(List<AddressDTO> a);
+
+	String updateEmail(List<EmailDTO> emailDto);
+
+	String updatePhoneNumber(List<PhoneNumberDTO> pnDto);
+
+	String updateCustomer(CustomerDTO cdto);
 
 	List<Customer> getCustomers();
 
-	public List<Customer> searchCustomer(Customer c) throws CustomerNotFoundException;
+	public List<Customer> searchCustomer(Customer c);
+	public void softDeleteCustomer(String cust_id);
+	void deleteCustomer (String cust_id) ;
 
 }

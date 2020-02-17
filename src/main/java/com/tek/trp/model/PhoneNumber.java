@@ -1,5 +1,5 @@
 /**
- * This entity define its  attributes and table mappings.
+   * This entity define its  attributes and table mappings.
  */
 package com.tek.trp.model;
 
@@ -32,8 +32,8 @@ import lombok.ToString;
 public class PhoneNumber {
 	@Id
 	@Column(name = "PhoneNumberId")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int Id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)	
+	private Long id;
 	@Column(name = "PhoneType")
 	String phoneType;
 	@Column(name = "CityCode")
@@ -42,13 +42,13 @@ public class PhoneNumber {
 	int countryCode;
 	@Column(name = "PhoneNumber")
 	String number;
-	@Column(name = "CustomerStatus")
-	private String customerStatus;
+	@Column(name = "IsPrimaryNumber")
+	private Boolean isPrimary;
 	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "CID")
-	@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
-	@JsonIdentityReference(alwaysAsId = true)
-	@JsonProperty("CID")
+	@JoinColumn(name = "CustomerId")	
+	 @JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="customerId")
+    @JsonIdentityReference(alwaysAsId=true)
+	@JsonProperty("CustomerId")
 	@EqualsAndHashCode.Exclude
 	@ToString.Exclude
 	private Customer customer;
