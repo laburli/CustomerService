@@ -190,7 +190,7 @@ public class CustomerServiceImplTest {
 
 		when(customerRepository.save(Mockito.any(Customer.class))).thenReturn(customer);
 
-		Customer cust = customerService.saveCustomer();
+		Customer cust = customerService.saveCustomer(customer);
 		assertEquals(customer, cust);
 	}
 

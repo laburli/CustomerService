@@ -21,11 +21,7 @@ import com.tek.trp.model.Customer;
 @Service
 public interface CustomerService {
 
-	Customer saveCustomer();
-
 	Customer saveCustomer(Customer c);
-
-	
 
 	String updateAddress(List<AddressDTO> a);
 

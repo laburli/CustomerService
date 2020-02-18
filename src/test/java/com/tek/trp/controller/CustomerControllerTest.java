@@ -293,7 +293,7 @@ public class CustomerControllerTest {
 System.out.println(input.toString());
 		this.mockMvc.perform(post("/api/save-customer-details1").content(input).contentType(MediaType.APPLICATION_JSON)
 				.accept(MediaType.APPLICATION_JSON)).andDo(print()).andExpect(status().isOk());
-		when(customerService.saveCustomer()).thenReturn(customer);
+		when(customerService.saveCustomer(customer)).thenReturn(customer);
 
 	}
 

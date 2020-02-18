@@ -38,11 +38,16 @@ public class CustomerController {
 	@Autowired
 	private CustomerService customerService;
 
-	@PostMapping(value = "/save-customer-details")
-	public Customer saveCustomer(@RequestBody Customer c) {
-		System.out.println("welcome to customer");
-		return customerService.saveCustomer(c);
+	@PostMapping(value = "/create-customer")
+	public Customer createCustomer(@Valid @RequestBody Customer customer) {
+		return customerService.saveCustomer(customer);
 	}
+
+	@GetMapping("/viewAll-Customers")
+	public List<Customer> getAllCustomer() {
+		return customerService.getCustomers();
+	}
+
 
 	@PutMapping(value = "/update-customer-details")
 	public String updateCustomer(@RequestBody CustomerDTO c) {
@@ -51,28 +56,17 @@ public class CustomerController {
 
 	@PutMapping(value = "/update-address-details")
 	public String updateAddress(@RequestBody List<AddressDTO> a) {
-
 		return customerService.updateAddress(a);
-
 	}
 
 	@PutMapping(value = "/update-email-details")
 	public String updateEmail(@RequestBody List<EmailDTO> a) {
-
 		return customerService.updateEmail(a);
-
 	}
 
 	@PutMapping(value = "/update-phonenumber-details")
 	public String updatePhoneNumber(@RequestBody List<PhoneNumberDTO> a) {
-
 		return customerService.updatePhoneNumber(a);
-
-	}
-
-	@PostMapping(value = "/save-customer-details1")
-	Customer saveCustomer() {
-		return customerService.saveCustomer();
 	}
 
 	@GetMapping(value = "/searchCustomer")
@@ -80,28 +74,15 @@ public class CustomerController {
 		return customerService.searchCustomer(searchCustomer);
 	}
 
-	
-
 	@PutMapping(value = "/softdelete/{id}")
 	public ResponseEntity<Object> softdeleteCustomer(@PathVariable String id) {
 		customerService.softDeleteCustomer(id);
 		return new ResponseEntity<>(HttpStatus.OK);
-
 	}
 
 	@DeleteMapping(value = "/{id}")
 	public void deleteCustomer(@PathVariable String id) {
 		customerService.deleteCustomer(id);
-	}
-
-	@GetMapping("/viewAll-Customers")
-	public List<Customer> getAllCustomer() {
-		return customerService.getCustomers();
-	}
-
-	@PostMapping(value = "/create-customer")
-	public Customer createCustomer(@Valid @RequestBody Customer customer) {
-		return customerService.saveCustomer(customer);
 	}
 
 }
