@@ -53,7 +53,7 @@ public class CustomerServiceImpl implements CustomerService {
 	@Override
 	public Customer saveCustomer(Customer c) {
 		if(c.getCustomerName()==null || c.getCustomerName().trim().isEmpty() )
-			throw new TRPException(ErrorCode.IN_VALIDE_INPUT);
+			throw new TRPException(ErrorCode.IN_VALID_INPUT);
 		Set<Address> a = c.getAddress();
 		Set<Email> e = c.getEmail();
 		Set<PhoneNumber> pn = c.getPhoneNumber();
