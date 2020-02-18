@@ -61,7 +61,10 @@ public class CustomerServiceImpl implements CustomerService {
 		a.forEach(o -> o.setCustomer(c));
 		e.forEach(o -> o.setCustomer(c));
 		pn.forEach(o -> o.setCustomer(c));
-		acc.forEach(o -> o.setCustomer(c));
+		acc.forEach(o -> {
+			o.setCustomer(c);
+			o.setAccountNumber(String.valueOf((int)(Math.random() * 90000000 + 1)));
+		});
 		c.setAddress(a);
 		c.setEmail(e);
 		c.setPhoneNumber(pn);

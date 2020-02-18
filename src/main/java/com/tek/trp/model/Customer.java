@@ -65,13 +65,13 @@ public class Customer {
 	@Column(name = "CreatedBy")
 	private String createdBy;
 	@Column(name = "CreatedOn")
-	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm", iso = ISO.DATE_TIME)
+	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss:SSS", iso = ISO.DATE_TIME)
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss:SSS")
 	private LocalDateTime createdOn;
 	@Column(name = "ModifiedBy")
 	private String modifiedBy;
 	@Column(name = "ModifiedOn")
-	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm", iso = ISO.DATE_TIME)
+	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss:SSS", iso = ISO.DATE_TIME)
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss:SSS")
 	private LocalDateTime modifiedOn;
 
