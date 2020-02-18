@@ -54,7 +54,7 @@ public class Address {
 	@JoinColumn(name = "CustomerId")	
 	 @JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="customerId")
     @JsonIdentityReference(alwaysAsId=true)
-	@JsonProperty("CustomerId")
+	@JsonProperty("customerId")
 	@EqualsAndHashCode.Exclude
     @ToString.Exclude		
 	private Customer customer;
