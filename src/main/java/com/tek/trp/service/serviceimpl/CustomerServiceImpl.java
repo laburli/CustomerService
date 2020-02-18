@@ -89,7 +89,7 @@ public class CustomerServiceImpl implements CustomerService {
 				throw new TRPException(ErrorCode.CUSTOMERID_NOT_FOUND);
 			}
 		} else {
-			throw new TRPException(ErrorCode.IN_VALIDE_INPUT);
+			throw new TRPException(ErrorCode.IN_VALID_INPUT);
 		}
 
 	}
@@ -112,7 +112,7 @@ public class CustomerServiceImpl implements CustomerService {
 					throw new TRPException(ErrorCode.CUSTOMERID_NOT_FOUND);
 
 			} else {
-				throw new TRPException(ErrorCode.IN_VALIDE_INPUT);
+				throw new TRPException(ErrorCode.IN_VALID_INPUT);
 			}
 		});
 
@@ -176,7 +176,7 @@ public class CustomerServiceImpl implements CustomerService {
 						throw new TRPException(ErrorCode.CUSTOMERID_NOT_FOUND);
 
 				} else {
-					throw new TRPException(ErrorCode.IN_VALIDE_INPUT);
+					throw new TRPException(ErrorCode.IN_VALID_INPUT);
 				}
 
 			});
@@ -232,7 +232,7 @@ public class CustomerServiceImpl implements CustomerService {
 						throw new TRPException(ErrorCode.CUSTOMERID_NOT_FOUND);
 
 				} else {
-					throw new TRPException(ErrorCode.IN_VALIDE_INPUT);
+					throw new TRPException(ErrorCode.IN_VALID_INPUT);
 				}
 
 			});

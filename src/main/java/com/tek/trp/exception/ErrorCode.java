@@ -14,7 +14,7 @@ public enum ErrorCode {
 
 	CUSTOMERID_NOT_FOUND("CustomerId not found", HttpStatus.NOT_FOUND),
 	EMPTY_INPUT("Input should not be Empty", HttpStatus.BAD_REQUEST),
-	IN_VALIDE_INPUT("Input was not valide or Mandatory fileds should not be empty", HttpStatus.BAD_REQUEST),
+	IN_VALID_INPUT("Input was not valid or Mandatory fileds should not be empty", HttpStatus.BAD_REQUEST),
 	ERROR_WHILE_RETRIEVING_DATA("Error while retrieving data, please try again..!", HttpStatus.INTERNAL_SERVER_ERROR),
 	NO_DATA_FOUND("No data found", HttpStatus.NOT_FOUND), CUSTOMERID_EXISTS("This account is already inactive",HttpStatus.CONFLICT),;
 
