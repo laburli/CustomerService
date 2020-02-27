@@ -34,15 +34,15 @@ public class Email {
 	@Id
 	@Column(name = "EmailId")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private Long emailId;
 	@Column(name = "EmailType")
 	String emailType ;
 	@Column(name = "EmailAddress")
 	String emailAddress ;
 	@Column(name = "IsPrimaryEmail")
-	private Boolean isPrimary;
+	private Boolean IsPrimaryEmail;
 	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "CustomerId")	
+	@JoinColumn(name = "CustomerId")
 	 @JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="customerId")
     @JsonIdentityReference(alwaysAsId=true)
 	@JsonProperty("customerId")

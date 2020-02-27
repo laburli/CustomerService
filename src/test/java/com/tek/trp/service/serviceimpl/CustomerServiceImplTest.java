@@ -72,7 +72,7 @@ public class CustomerServiceImplTest {
 		customer.setCustomerId("62167833");
 		customer.setCustomerName("CCP User1");
 		customer.setCustomerStatus("Active");
-		customer.setLastname("adari");
+		customer.setLastName("adari");
 		customer.setMiddleName("c");
 		customer.setCreatedBy("raviteja");
 		customer.setCreatedOn(LocalDateTime.now());
@@ -86,7 +86,7 @@ public class CustomerServiceImplTest {
 		a.setCountry("GSP");
 		a.setDoorNumber("88/134");
 		a.setLandMark("Sub Register office lane");
-		a.setPincode("500032");
+		a.setPinCode("500032");
 		a.setState("Telangana");
 		a.setIsPrimary(true);
 		a.setCustomer(customer);
@@ -98,7 +98,7 @@ public class CustomerServiceImplTest {
 		a1.setCountry("india");
 		a1.setDoorNumber("HIG-624");
 		a1.setLandMark("Near Vijetha Super Market");
-		a1.setPincode("500072");
+		a1.setPinCode("500072");
 		a1.setState("Telangana");
 		a1.setCustomer(customer);
 		a1.setIsPrimary(true);
@@ -111,14 +111,14 @@ public class CustomerServiceImplTest {
 		e.setEmailAddress("raadari@teksystem.com");
 		e.setEmailType("office");
 		e.setCustomer(customer);
-		e.setIsPrimary(true);
+		e.setIsPrimaryEmail(true);
 
 		Email e1 = new Email();
 
 		e1.setEmailAddress("raavitejaadaricse@gmail.com");
 		e1.setEmailType("personal");
 		e1.setCustomer(customer);
-		e1.setIsPrimary(true);
+		e1.setIsPrimaryEmail(true);
 
 		emails = new ArrayList<>();
 		emails.add(e);
@@ -127,18 +127,18 @@ public class CustomerServiceImplTest {
 		PhoneNumber pn = new PhoneNumber();
 		pn.setCityCode(40);
 		pn.setCountryCode(91);
-		pn.setPhoneType("Mobile");
+		pn.setPhoneNumberType("Mobile");
 		pn.setNumber("9492946341");
 		pn.setCustomer(customer);
-		pn.setIsPrimary(true);
+		pn.setIsPrimaryNumber(true);
 
 		PhoneNumber pn1 = new PhoneNumber();
 		pn1.setCityCode(40);
 		pn1.setCountryCode(91);
-		pn1.setPhoneType("Land");
+		pn1.setPhoneNumberType("Land");
 		pn1.setNumber("98674373");
 		pn1.setCustomer(customer);
-		pn1.setIsPrimary(true);
+		pn1.setIsPrimaryNumber(true);
 
 		pNumbers = new ArrayList<>();
 		pNumbers.add(pn);

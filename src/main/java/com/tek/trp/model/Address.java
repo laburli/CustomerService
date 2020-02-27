@@ -33,7 +33,7 @@ public class Address {
 	@Id
 	@Column(name = "AddressId")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private Long addressId;
 	@Column(name = "DoorNumber")
 	private String doorNumber;
 	@Column(name = "AddressType")
@@ -47,7 +47,7 @@ public class Address {
 	@Column(name = "Country")
 	private String country;
 	@Column(name = "Pincode")
-	private String pincode;
+	private String pinCode;
 	@Column(name = "IsPrimaryAddress")
 	private Boolean isPrimary;
 	@ManyToOne(cascade = CascadeType.ALL)

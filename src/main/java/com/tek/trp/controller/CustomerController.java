@@ -10,6 +10,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -32,7 +33,9 @@ import com.tek.trp.service.CustomerService;
  *
  */
 @RestController
+
 @RequestMapping("/api")
+@CrossOrigin(origins = "*")
 public class CustomerController {
 
 	@Autowired
@@ -81,7 +84,11 @@ public class CustomerController {
 	}
 
 	
-
+	@GetMapping(value = "/search/{customerId}/{cusstomerName}")
+	public List<Customer> searchCustomer(@PathVariable(required = false) String customerId, @PathVariable(required = false) String customerName ) {
+		return customerService.searchCustomer(customerId,customerName);
+	}
+	
 	@PutMapping(value = "/softdelete/{id}")
 	public ResponseEntity<Object> softdeleteCustomer(@PathVariable String id) {
 		customerService.softDeleteCustomer(id);

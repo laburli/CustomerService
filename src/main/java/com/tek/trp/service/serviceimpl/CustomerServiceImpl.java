@@ -9,6 +9,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
+import java.util.concurrent.ThreadLocalRandom;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,7 +20,6 @@ import com.tek.trp.dto.AddressDTO;
 import com.tek.trp.dto.CustomerDTO;
 import com.tek.trp.dto.EmailDTO;
 import com.tek.trp.dto.PhoneNumberDTO;
-
 import com.tek.trp.exception.ErrorCode;
 import com.tek.trp.exception.TRPException;
 import com.tek.trp.model.Account;
@@ -59,7 +59,7 @@ public class CustomerServiceImpl implements CustomerService {
 		c.setCreatedOn(LocalDateTime.now());
 		c.setCustomerId("62167833");
 		c.setCustomerName("CCP User1");
-		c.setLastname("adari");
+		c.setLastName("adari");
 		c.setMiddleName("c");
 		c.setModifiedBy("none");
 		c.setModifiedOn(LocalDateTime.now());
@@ -70,30 +70,30 @@ public class CustomerServiceImpl implements CustomerService {
 		e.setEmailAddress("raadari@teksystem.com");
 		e.setEmailType("office");
 		e.setCustomer(c);
-		e.setIsPrimary(true);
+		e.setIsPrimaryEmail(true);
 
 		Email e1 = new Email();
 
 		e1.setEmailAddress("raavitejaadaricse@gmail.com");
 		e1.setEmailType("personal");
 		e1.setCustomer(c);
-		e1.setIsPrimary(true);
+		e1.setIsPrimaryEmail(true);
 
 		PhoneNumber pn = new PhoneNumber();
 		pn.setCityCode(40);
 		pn.setCountryCode(91);
-		pn.setPhoneType("Mobile");
+		pn.setPhoneNumberType("Mobile");
 		pn.setNumber("9492946341");
 		pn.setCustomer(c);
-		pn.setIsPrimary(true);
+		pn.setIsPrimaryNumber(true);
 
 		PhoneNumber pn1 = new PhoneNumber();
 		pn1.setCityCode(40);
 		pn1.setCountryCode(91);
-		pn1.setPhoneType("Land");
+		pn1.setPhoneNumberType("Land");
 		pn1.setNumber("98674373");
 		pn1.setCustomer(c);
-		pn1.setIsPrimary(true);
+		pn1.setIsPrimaryNumber(true);
 
 		Address a = new Address();
 
@@ -102,7 +102,7 @@ public class CustomerServiceImpl implements CustomerService {
 		a.setCountry("GSP");
 		a.setDoorNumber("88/134");
 		a.setLandMark("Sub Register office lane");
-		a.setPincode("500032");
+		a.setPinCode("500032");
 		a.setState("Telangana");
 		a.setIsPrimary(true);
 		a.setCustomer(c);
@@ -114,7 +114,7 @@ public class CustomerServiceImpl implements CustomerService {
 		a1.setCountry("india");
 		a1.setDoorNumber("HIG-624");
 		a1.setLandMark("Near Vijetha Super Market");
-		a1.setPincode("500072");
+		a1.setPinCode("500072");
 		a1.setState("Telangana");
 		a1.setCustomer(c);
 		a1.setIsPrimary(true);
@@ -156,45 +156,49 @@ public class CustomerServiceImpl implements CustomerService {
 
 	@Override
 	public Customer saveCustomer(Customer c) {
+		logger.info(c.toString());
+		if (c.getCustomerName() == null || c.getCustomerName().trim().isEmpty())
+			throw new TRPException(ErrorCode.IN_VALID_INPUT);
 		Set<Address> a = c.getAddress();
 		Set<Email> e = c.getEmail();
 		Set<PhoneNumber> pn = c.getPhoneNumber();
-		Set<Account> acc = c.getAccount();
+		//Set<Account> acc = acc;
 		a.forEach(o -> o.setCustomer(c));
 		e.forEach(o -> o.setCustomer(c));
 		pn.forEach(o -> o.setCustomer(c));
-		acc.forEach(o -> o.setCustomer(c));
+		
 		c.setAddress(a);
 		c.setEmail(e);
 		c.setPhoneNumber(pn);
-		c.setAccount(acc);
-
+		Account acc = new Account();
+		acc.setAccountNumber(String.valueOf(ThreadLocalRandom.current().nextLong(000000001,999999999)));
+		acc.setAccountType("Savings");
+		acc.setAccountStatus("Active");
+		acc.setBranchCity("Hyderabad");
+		acc.setBranchCountry("India");
+		acc.setBranchId(1234);
+		acc.setBranchName("Gachibowli");
+		acc.setBranchState("Telangana");
+		acc.setIfscCode("TRP01CCP");
+		acc.setBalance(0);
+		acc.setCustomer(c);
+		Set<Account> accSet = new HashSet<>();
+		accSet.add(acc);
+		c.setAccount(accSet);
+		
+		//c.setCustomerId(String.valueOf(new Random().nextInt(9) * 90000000 + 1));
+		int  id= ThreadLocalRandom.current().nextInt(0000001,9999999);
+		logger.info("customerId {}",id);
+		c.setCustomerId(String.valueOf(id));
+		logger.info("customerId {}",c.getCustomerId());
+		c.setCreatedOn(LocalDateTime.now());
+		c.setModifiedOn(LocalDateTime.now());
+		c.setCreatedBy(c.getCustomerName());
+		c.setModifiedBy(c.getCustomerName());
 		return customerRepository.save(c);
 	}
 
-	/*
-	 * @Override public Customer updateCustomer(Customer c) {
-	 * 
-	 * final Customer custom = c.getCustomerId() != null ?
-	 * customerRepository.findByCustomerId(c.getCustomerId()) : c; Set<Address> a =
-	 * custom.getAddress(); Set<Email> e = custom.getEmail(); Set<PhoneNumber> pn =
-	 * custom.getPhoneNumber(); a.forEach(o -> { o.setCustomer(custom); Customer
-	 * cust = o.getCustomer().getCustomerId() == null ? c :
-	 * customerRepository.findByCustomerId(o.getCustomer().getCustomerId());
-	 * cust.setModifiedOn(LocalDateTime.now()); cust.setModifiedBy("User");
-	 * o.setCustomer(cust); }); e.forEach(o -> { o.setCustomer(custom); Customer
-	 * cust = o.getCustomer().getCustomerId() == null ? c :
-	 * customerRepository.findByCustomerId(o.getCustomer().getCustomerId());
-	 * cust.setModifiedOn(LocalDateTime.now()); cust.setModifiedBy("User");
-	 * o.setCustomer(cust); }); pn.forEach(o -> { o.setCustomer(custom); Customer
-	 * cust = o.getCustomer().getCustomerId() == null ? c :
-	 * customerRepository.findByCustomerId(o.getCustomer().getCustomerId());
-	 * cust.setModifiedOn(LocalDateTime.now()); cust.setModifiedBy("User");
-	 * o.setCustomer(cust); }); c.setAddress(a); c.setEmail(e);
-	 * c.setPhoneNumber(pn); return customerRepository.save(c);
-	 * 
-	 * }
-	 */
+	
 
 	@Override
 	public String updateCustomer(CustomerDTO cdto) {
@@ -205,7 +209,7 @@ public class CustomerServiceImpl implements CustomerService {
 			if (custom != null) {
 				custom.setCustomerName(cdto.getCustomerName());
 				custom.setMiddleName(cdto.getMiddleName());
-				custom.setLastname(cdto.getMiddleName());
+				custom.setLastName(cdto.getMiddleName());
 				custom.setModifiedBy("User");
 				custom.setModifiedOn(LocalDateTime.now());
 				customerRepository.save(custom);
@@ -264,13 +268,13 @@ public class CustomerServiceImpl implements CustomerService {
 			add.setIsPrimary(o.getIsPrimary());
 		}
 		if (o.getId() != null) {
-			add.setId(o.getId());
+			add.setAddressId(o.getId());
 		}
 		if (o.getLandMark() != null) {
 			add.setLandMark(o.getLandMark());
 		}
 		if (o.getPincode() != null) {
-			add.setPincode(o.getPincode());
+			add.setPinCode(o.getPincode());
 		}
 		if (o.getState() != null) {
 			add.setState(o.getState());
@@ -328,10 +332,10 @@ public class CustomerServiceImpl implements CustomerService {
 		}
 
 		if (o.getIsPrimary() != null) {
-			add.setIsPrimary(o.getIsPrimary());
+			add.setIsPrimaryEmail(o.getIsPrimary());
 		}
 		if (o.getId() != null) {
-			add.setId(o.getId());
+			add.setEmailId(o.getId());
 		}
 
 	}
@@ -371,10 +375,10 @@ public class CustomerServiceImpl implements CustomerService {
 
 	private void setPhoneNumber(PhoneNumber pn, PhoneNumberDTO o) {
 		if (o.getIsPrimary() != null) {
-			pn.setIsPrimary(o.getIsPrimary());
+			pn.setIsPrimaryNumber(o.getIsPrimary());
 		}
 		if (o.getId() != null) {
-			pn.setId(o.getId());
+			pn.setPhoneNumberId(o.getId());
 		}
 
 		if (o.getCityCode() != 0) {
@@ -487,6 +491,53 @@ public class CustomerServiceImpl implements CustomerService {
 			// throw a new No Customer Found Exception method;
 		} else
 			customerRepository.delete(customerRepository.findByCustomerId(id));
+	}
+
+	@Override
+	public List<Customer> searchCustomer(String customerId, String customerName) {
+		List<Customer> listCustomer = new ArrayList<>();
+		try {
+			if (customerId != null && !customerId.equalsIgnoreCase("")) {
+				if (customerName != null && !customerName.equalsIgnoreCase("")) {
+					Optional<Customer> byCustomerIdAndFirstName = customerRepository
+							.findByCustomerIdAndCustomerName(customerId, customerName);
+					if (byCustomerIdAndFirstName.isPresent()) {
+						Customer getCustomer = byCustomerIdAndFirstName.get();
+						listCustomer.add(getCustomer);
+					} else {
+
+						throw new TRPException(ErrorCode.CUSTOMERID_NOT_FOUND);
+						// throw new TRPException("There is no customer with this id :" +
+						// customerId + " and name:" + customerName);
+					}
+				} else {
+					Customer byCustomerId = customerRepository.findByCustomerId(customerId);
+					if (byCustomerId != null) {
+						listCustomer.add(byCustomerId);
+					} else {
+						throw new TRPException(ErrorCode.CUSTOMERID_NOT_FOUND);
+						// throw new CustomerNotFoundException("There is no customer with this id :" +
+						// customerId);
+					}
+				}
+			} else {
+				Optional<List<Customer>> byFirstName = customerRepository
+						.findByCustomerName(customerName);
+				if (byFirstName.isPresent()) {
+					listCustomer = byFirstName.get();
+				} else {
+					throw new TRPException(ErrorCode.CUSTOMERID_NOT_FOUND);
+					// throw new CustomerNotFoundException("There is no customer with this name:" +
+					// customerName);
+				}
+			}
+		} catch (Exception e) {
+
+			throw new TRPException(ErrorCode.ERROR_WHILE_RETRIEVING_DATA);
+			// throw new CustomerNotFoundException("There is a problem to find a
+			// customer,Please try after sometime");
+		}
+		return listCustomer;
 	}
 
 }

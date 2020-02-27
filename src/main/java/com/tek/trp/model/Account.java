@@ -33,9 +33,9 @@ import lombok.ToString;
 @Data
 public class Account {
 	@Id
-	@Column(name = "accountId")
+	@Column(name = "AccountId")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private Long accountId;
 	@Column(name = "AccountType")
 	String accountType;
 	@Column(name = "BranchId")
@@ -55,6 +55,8 @@ public class Account {
 	private String ifscCode;
 	@Column(name = "AccountStatus")
 	private String accountStatus;
+	@Column(name = "Balance")
+	private double balance;
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "CustomerId")
 	 @JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="customerId")

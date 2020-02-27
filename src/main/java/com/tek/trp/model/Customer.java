@@ -36,11 +36,11 @@ public class Customer {
 	private String customerName;
 	@Id
 	// @GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "CustomerId", unique = true, nullable = false)
+	@Column(name = "CustomerId", nullable = false)
 	
 	private String customerId;
 	@Column(name = "Lastname")
-	private String lastname;
+	private String lastName;
 	@Column(name = "MiddleName")
 	private String middleName;
 	@Column(name = "CustomerStatus")
@@ -75,10 +75,6 @@ public class Customer {
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss:SSS")
 	private LocalDateTime modifiedOn;
 
-	/*
-	 * public void setAddress(Set<Address> address) { if (this.address == null) {
-	 * this.address = address; } else { this.address.retainAll(address);
-	 * this.address.addAll(address); } }
-	 */
+	
 
 }

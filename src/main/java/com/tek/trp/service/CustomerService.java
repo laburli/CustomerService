@@ -41,4 +41,6 @@ public interface CustomerService {
 	public void softDeleteCustomer(String cust_id);
 	void deleteCustomer (String cust_id) ;
 
+	List<Customer> searchCustomer(String customerId, String customerName);
+
 }

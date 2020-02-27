@@ -33,9 +33,9 @@ public class PhoneNumber {
 	@Id
 	@Column(name = "PhoneNumberId")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)	
-	private Long id;
+	private Long phoneNumberId;
 	@Column(name = "PhoneType")
-	String phoneType;
+	String phoneNumberType;
 	@Column(name = "CityCode")
 	int cityCode;
 	@Column(name = "CountryCode")
@@ -43,7 +43,7 @@ public class PhoneNumber {
 	@Column(name = "PhoneNumber")
 	String number;
 	@Column(name = "IsPrimaryNumber")
-	private Boolean isPrimary;
+	private Boolean isPrimaryNumber;
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "CustomerId")	
 	 @JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="customerId")
