@@ -13,6 +13,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.NaturalId;
+
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIdentityReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -27,36 +29,40 @@ import lombok.ToString;
  *
  */
 @Entity
-@Table(name = "Address")
+@Table(name = "Account")
 @Data
-public class Address {
+public class Account {
 	@Id
-	@Column(name = "AddressId")
+	@Column(name = "AccountId")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long addressId;
-	@Column(name = "DoorNumber")
-	private String doorNumber;
-	@Column(name = "AddressType")
-	private String addressType;
-	@Column(name = "LandMark")
-	private String landMark;
-	@Column(name = "City")
-	private String city;
-	@Column(name = "State")
-	private String state;
-	@Column(name = "Country")
-	private String country;
-	@Column(name = "Pincode")
-	private String pinCode;
-	@Column(name = "IsPrimaryAddress")
-	private Boolean isPrimary;
+	private Long accountId;
+	@Column(name = "AccountType")
+	String accountType;
+	@Column(name = "BranchId")
+	private int branchId;
+	@NaturalId
+	@Column(name = "AccountNumber")
+	private String accountNumber;
+	@Column(name = "BranchName")
+	private String branchName;
+	@Column(name = "BranchCity")
+	private String branchCity;
+	@Column(name = "BranchState")
+	private String branchState;
+	@Column(name = "BranchCountry")
+	private String branchCountry;
+	@Column(name = "IFSCCode")
+	private String ifscCode;
+	@Column(name = "AccountStatus")
+	private String accountStatus;
+	@Column(name = "Balance")
+	private double balance;
 	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "CustomerId")	
+	@JoinColumn(name = "CustomerId")
 	 @JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="customerId")
     @JsonIdentityReference(alwaysAsId=true)
 	@JsonProperty("customerId")
 	@EqualsAndHashCode.Exclude
-    @ToString.Exclude		
+	@ToString.Exclude
 	private Customer customer;
-
 }

@@ -26,7 +26,7 @@ import lombok.ToString;
  * @author raadari
  *
  */
-@Entity
+@Entity	
 @Table(name = "Email")
 @Data
 public class Email {
@@ -34,18 +34,18 @@ public class Email {
 	@Id
 	@Column(name = "EmailId")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Long emailId;
 	@Column(name = "EmailType")
 	String emailType ;
 	@Column(name = "EmailAddress")
 	String emailAddress ;
-	@Column(name = "CustomerStatus")
-	private String customerStatus;
+	@Column(name = "IsPrimaryEmail")
+	private Boolean IsPrimaryEmail;
 	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "CID")
-	 @JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
+	@JoinColumn(name = "CustomerId")
+	 @JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="customerId")
     @JsonIdentityReference(alwaysAsId=true)
-	@JsonProperty("CID")
+	@JsonProperty("customerId")
 	@EqualsAndHashCode.Exclude
     @ToString.Exclude		
 	private Customer customer;
