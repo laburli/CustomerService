@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.tek.trp.dto.AddressDTO;
@@ -35,7 +36,8 @@ import com.tek.trp.service.CustomerService;
 @RestController
 
 @RequestMapping("/api")
-@CrossOrigin(origins = "*")
+@CrossOrigin(allowedHeaders = "*",
+		methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.PATCH, RequestMethod.DELETE, RequestMethod.OPTIONS})
 public class CustomerController {
 
 	@Autowired
@@ -78,7 +80,7 @@ public class CustomerController {
 		return customerService.saveCustomer();
 	}
 
-	@GetMapping(value = "/searchCustomer")
+	@PostMapping(value = "/searchCustomer")
 	public List<Customer> searchCustomer(@RequestBody Customer searchCustomer) {
 		return customerService.searchCustomer(searchCustomer);
 	}
@@ -110,5 +112,14 @@ public class CustomerController {
 	public Customer createCustomer(@Valid @RequestBody Customer customer) {
 		return customerService.saveCustomer(customer);
 	}
+
+	
+	  @GetMapping(value = "/{cid}")
+	    public String findCustomerbyCustomerId(@PathVariable String cid){
+	        return customerService.findIfCustomerExistsByCustomerId(cid);
+	    }
+
+	 
+
 
 }

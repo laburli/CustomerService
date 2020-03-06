@@ -57,7 +57,7 @@ public class CustomerServiceImpl implements CustomerService {
 
 		c.setCreatedBy("raviteja");
 		c.setCreatedOn(LocalDateTime.now());
-		c.setCustomerId("62167833");
+		c.setCustomerId(String.valueOf(ThreadLocalRandom.current().nextLong(000000001,999999999)));
 		c.setCustomerName("CCP User1");
 		c.setLastName("adari");
 		c.setMiddleName("c");
@@ -120,7 +120,7 @@ public class CustomerServiceImpl implements CustomerService {
 		a1.setIsPrimary(true);
 
 		Account acc = new Account();
-		acc.setAccountNumber(String.valueOf(Math.random() * 90000000 + 1));
+		acc.setAccountNumber(String.valueOf(ThreadLocalRandom.current().nextLong(000000001,999999999)));
 		acc.setAccountType("Savings");
 		acc.setAccountStatus("Active");
 		acc.setBranchCity("Hyderabad");
@@ -129,6 +129,7 @@ public class CustomerServiceImpl implements CustomerService {
 		acc.setBranchName("Gachibowli");
 		acc.setBranchState("Telangana");
 		acc.setIfscCode("TRP01CCP");
+		acc.setBalance(0);
 		acc.setCustomer(c);
 
 		Set<Address> addressSet = new HashSet<>();
@@ -480,17 +481,16 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	@Override
-	public void deleteCustomer(String cust_id) {
+	public void deleteCustomer(String customerId) {
 
-		String id = cust_id;
-		Customer customer = customerRepository.findByCustomerId(id);
+		Customer customer = customerRepository.findByCustomerId(customerId);
 		if (customer == null) {
 
 			throw new TRPException(ErrorCode.CUSTOMERID_NOT_FOUND);
 			// throw new CustomerNotFoundException( "There is no customer with this id :" );
 			// throw a new No Customer Found Exception method;
 		} else
-			customerRepository.delete(customerRepository.findByCustomerId(id));
+			customerRepository.delete(customerRepository.findByCustomerId(customerId));
 	}
 
 	@Override
@@ -539,5 +539,17 @@ public class CustomerServiceImpl implements CustomerService {
 		}
 		return listCustomer;
 	}
+	
+
+	@Override
+	    public String findIfCustomerExistsByCustomerId(String cid){
+	        Customer customer = customerRepository.findByCustomerId(cid);
+	        if(customer != null){
+	            return "True";
+	        }
+	        else
+	            return "False";
+	    }
+	
 
 }
