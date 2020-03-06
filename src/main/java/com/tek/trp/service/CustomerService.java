@@ -43,4 +43,6 @@ public interface CustomerService {
 
 	List<Customer> searchCustomer(String customerId, String customerName);
 
+	String findIfCustomerExistsByCustomerId(String cid);
+
 }
