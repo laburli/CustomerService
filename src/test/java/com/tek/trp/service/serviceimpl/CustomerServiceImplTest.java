@@ -39,6 +39,7 @@ import com.tek.trp.repository.AddressRepository;
 import com.tek.trp.repository.CustomerRepository;
 import com.tek.trp.repository.EmailRepository;
 import com.tek.trp.repository.PhoneNumberRepository;
+import com.tek.trp.utilities.Constants;
 
 /**
  * @author raadari
@@ -225,7 +226,7 @@ public class CustomerServiceImplTest {
 		when(addressRepository.saveAll(Mockito.anyList())).thenReturn(addresses);
 
 		String result = customerService.updateAddress(adtoList);
-		assertEquals("Updated Successfully", result);
+		assertEquals(Constants.SUCCESS, result);
 	}
 
 	@Test
@@ -243,7 +244,7 @@ public class CustomerServiceImplTest {
 		when(emailRepository.saveAll(Mockito.anyList())).thenReturn(emails);
 
 		String result = customerService.updateEmail(edtoList);
-		assertEquals("Updated Successfully", result);
+		assertEquals(Constants.SUCCESS, result);
 	}
 
 	@Test
@@ -293,10 +294,10 @@ public class CustomerServiceImplTest {
 
 		List<PhoneNumberDTO> pnDtoList = new ArrayList<>();
 
-		pnDtoList.add(PhoneNumberDTO.builder().id(2L).phoneType("office").number("040325634").isPrimary(true).cityCode(40).countryCode(91)
+		pnDtoList.add(PhoneNumberDTO.builder().phoneNumberId(2L).phoneNumberType("office").number("040325634").isPrimaryNumber(true).cityCode(40).countryCode(91)
 				.customerId("62167833").build());
 
-		pnDtoList.add(PhoneNumberDTO.builder().id(1L).phoneType("personal").number("9492946341").isPrimary(true).cityCode(40).countryCode(91)
+		pnDtoList.add(PhoneNumberDTO.builder().phoneNumberId(1L).phoneNumberType("personal").number("9492946341").isPrimaryNumber(true).cityCode(40).countryCode(91)
 				.customerId("62167833").build());
 
 		when(customerRepository.findByCustomerId(Mockito.anyString())).thenReturn(customer);
@@ -304,7 +305,7 @@ public class CustomerServiceImplTest {
 		when(phoneNumberRepository.saveAll(Mockito.anyList())).thenReturn(pNumbers);
 
 		String result = customerService.updatePhoneNumber(pnDtoList);
-		assertEquals("Updated Successfully", result);
+		assertEquals(Constants.SUCCESS, result);
 	}
 
 	@Test

@@ -32,6 +32,7 @@ import com.tek.trp.repository.CustomerRepository;
 import com.tek.trp.repository.EmailRepository;
 import com.tek.trp.repository.PhoneNumberRepository;
 import com.tek.trp.service.CustomerService;
+import com.tek.trp.utilities.Constants;
 
 /**
  * @author raadari
@@ -228,18 +229,20 @@ public class CustomerServiceImpl implements CustomerService {
 	public String updateAddress(List<AddressDTO> a) {
 
 		List<Address> aset = new ArrayList<>();
-		Address add = new Address();
+		
 
 		a.forEach(o -> {
 			if (o.getCustomerId() != null) {
+				Address add = new Address();
 				setAddress(add, o);
 				Customer c = customerRepository.findByCustomerId(o.getCustomerId());
 				if (c != null) {
 					c.setModifiedOn(LocalDateTime.now());
 					add.setCustomer(c);
 					aset.add(add);
-				} else
+				} else {
 					throw new TRPException(ErrorCode.CUSTOMERID_NOT_FOUND);
+				}
 
 			} else {
 				throw new TRPException(ErrorCode.IN_VALID_INPUT);
@@ -248,7 +251,7 @@ public class CustomerServiceImpl implements CustomerService {
 
 		addressRepository.saveAll(aset);
 
-		return "Updated Successfully";
+		return Constants.SUCCESS;
 	}
 
 	/**
@@ -288,13 +291,14 @@ public class CustomerServiceImpl implements CustomerService {
 	@Override
 	public String updateEmail(List<EmailDTO> emailDto) {
 
-		try {
+		
 			List<Email> aset = new ArrayList<>();
-			Email email = new Email();
+			
 
 			emailDto.forEach(o -> {
 
 				if (o.getCustomerId() != null) {
+					Email email = new Email();
 					setEmail(email, o);
 					Customer c = customerRepository.findByCustomerId(o.getCustomerId());
 					if (c != null) {
@@ -312,12 +316,8 @@ public class CustomerServiceImpl implements CustomerService {
 			});
 
 			emailRepository.saveAll(aset);
-		} catch (Exception e) {
-			logger.info("While updating exception occured {}", e.getCause());
-			throw new TRPException(ErrorCode.ERROR_WHILE_RETRIEVING_DATA);
-
-		}
-		return "Updated Successfully";
+		
+		return Constants.SUCCESS;
 	}
 
 	/**
@@ -343,23 +343,25 @@ public class CustomerServiceImpl implements CustomerService {
 
 	@Override
 	public String updatePhoneNumber(List<PhoneNumberDTO> pnDto) {
+		
 
-		try {
+		
 			List<PhoneNumber> aset = new ArrayList<>();
-			PhoneNumber pn = new PhoneNumber();
-
 			pnDto.forEach(o -> {
 				if (o.getCustomerId() != null) {
-					setPhoneNumber(pn, o);
+					 PhoneNumber  pn = new PhoneNumber();
+					 setPhoneNumber(pn, o);
+				
 					Customer c = customerRepository.findByCustomerId(o.getCustomerId());
 					if (c != null) {
 						c.setModifiedOn(LocalDateTime.now());
 						pn.setCustomer(c);
-						logger.info("customer-- {},ocustmerid{}", c.getCustomerId(), o.getCustomerId());
+						logger.info("custmerid : {}", o.getCustomerId());
 						aset.add(pn);
 
-					} else
+					} else {
 						throw new TRPException(ErrorCode.CUSTOMERID_NOT_FOUND);
+					}
 
 				} else {
 					throw new TRPException(ErrorCode.IN_VALID_INPUT);
@@ -368,18 +370,15 @@ public class CustomerServiceImpl implements CustomerService {
 			});
 
 			phoneNumberRepository.saveAll(aset);
-		} catch (Exception e) {
-			logger.info("While updating exception occured {}", e.getCause());
-		}
-		return "Updated Successfully";
+		return Constants.SUCCESS;
 	}
 
 	private void setPhoneNumber(PhoneNumber pn, PhoneNumberDTO o) {
-		if (o.getIsPrimary() != null) {
-			pn.setIsPrimaryNumber(o.getIsPrimary());
+		if (o.getIsPrimaryNumber() != null) {
+			pn.setIsPrimaryNumber(o.getIsPrimaryNumber());
 		}
-		if (o.getId() != null) {
-			pn.setPhoneNumberId(o.getId());
+		if (o.getPhoneNumberId() != null) {
+			pn.setPhoneNumberId(o.getPhoneNumberId());
 		}
 
 		if (o.getCityCode() != 0) {
@@ -392,6 +391,10 @@ public class CustomerServiceImpl implements CustomerService {
 
 		if (o.getNumber() != null) {
 			pn.setNumber(o.getNumber());
+		}
+		
+		if (o.getPhoneNumberType() != null) {
+			pn.setPhoneNumberType(o.getPhoneNumberType());
 		}
 
 	}

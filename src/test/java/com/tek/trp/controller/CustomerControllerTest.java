@@ -222,10 +222,10 @@ public class CustomerControllerTest {
 
 		List<PhoneNumberDTO> pnDtoList = new ArrayList<>();
 
-		pnDtoList.add(PhoneNumberDTO.builder().id(2L).phoneType("office").number("040325634").isPrimary(true)
+		pnDtoList.add(PhoneNumberDTO.builder().phoneNumberId(2L).phoneNumberType("office").number("040325634").isPrimaryNumber(true)
 				.customerId("62167833").build());
 
-		pnDtoList.add(PhoneNumberDTO.builder().id(1L).phoneType("personal").number("9492946341").isPrimary(true)
+		pnDtoList.add(PhoneNumberDTO.builder().phoneNumberId(1L).phoneNumberType("personal").number("9492946341").isPrimaryNumber(true)
 				.customerId("62167833").build());
 
 		byte[] input = toJson(pnDtoList);

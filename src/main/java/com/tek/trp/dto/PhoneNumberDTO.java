@@ -13,12 +13,13 @@ import lombok.Getter;
 @Getter
 @Builder
 public class PhoneNumberDTO {
-	private Long id;
+	private Long phoneNumberId;
 	private String customerId;
-	private String phoneType;
+	private String phoneNumberType;
 	private int countryCode;
 	private int cityCode;
 	private String number;
-	private Boolean isPrimary;
+	private Boolean isPrimaryNumber;
+	
 
 }
